@@ -202,6 +202,9 @@ h3 { font-size: 20px; }
 .tile .play { left: auto; right: 10px; bottom: auto; top: 10px; width: 36px; height: 36px; }
 .tile .play::before { border-left-width: 11px; border-top-width: 7px; border-bottom-width: 7px; }
 .empty { padding: 48px 0; color: var(--muted); }
+.season-head { font-size: 22px; padding: 40px 0 0; }
+.season-head:first-child { padding-top: 28px; }
+.season-head + .grid { padding-top: 16px; }
 
 /* ---------- Lightbox ---------- */
 .lb { position: fixed; inset: 0; z-index: 100; background: rgba(20, 14, 8, 0.94); display: none; }
@@ -297,4 +300,11 @@ details.path .body b { font-weight: 500; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}
+
+/* Phone: video tiles keep only the title so the play button and frame stay readable. */
+@media (max-width: 719px) {
+  .tile .cap { font-size: 0; padding: 20px 10px 8px; }
+  .tile .cap b { font-size: 13px; }
+  .tile .play { width: 32px; height: 32px; top: 8px; right: 8px; }
 }

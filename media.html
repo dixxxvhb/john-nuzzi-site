@@ -37,7 +37,7 @@
   </div>
 
   <section class="wrap">
-    <div class="grid" id="grid"></div>
+    <div id="grid"></div>
     <p class="empty" id="empty" hidden>Nothing here yet.</p>
   </section>
 </main>
@@ -60,14 +60,15 @@
     { id: 'groups', label: 'Groups', test: i => i.tag === 'groups' },
     { id: 'class', label: 'Class and rehearsal', test: i => i.tag === 'class' },
     { id: 'photos', label: 'Photos', test: i => i.type === 'photo' },
-    { id: 'dwd', label: 'ProSeries', test: i => i.tag === 'dwd' || i.tag === 'awards' }
+    { id: 'stage', label: 'On stage', test: i => i.type === 'photo' && i.tag === 'stage' },
+    { id: 'off', label: 'Off stage', test: i => i.type === 'photo' && i.tag !== 'stage' }
   ];
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const res = await fetch('data/media.json');
   const { items } = await res.json();
-  // Newest season first, videos ahead of photos inside a season.
+  // Newest season first, videos ahead of photos inside a season, newest dates first.
   const order = s => s ? parseInt(s, 10) : 0;
-  items.sort((a, b) => order(b.season) - order(a.season) || (a.type === b.type ? 0 : a.type === 'video' ? -1 : 1));
+  items.sort((a, b) => order(b.season) - order(a.season) || (a.type === b.type ? String(b.date || '').localeCompare(String(a.date || '')) : a.type === 'video' ? -1 : 1));
 
   const vids = items.filter(i => i.type === 'video').length;
   document.getElementById('summary').textContent =
@@ -93,7 +94,19 @@
     const list = items.filter(f.test);
     grid.innerHTML = '';
     document.getElementById('empty').hidden = list.length > 0;
+    let season = null, cols = null;
     list.forEach((it, idx) => {
+      const sKey = it.season || 'Earlier';
+      if (sKey !== season) {
+        season = sKey;
+        const h = document.createElement('h2');
+        h.className = 'season-head';
+        h.textContent = sKey === 'Earlier' ? 'More from the archive' : sKey.replace('-', ' to 20') + ' season';
+        grid.appendChild(h);
+        cols = document.createElement('div');
+        cols.className = 'grid';
+        grid.appendChild(cols);
+      }
       const b = document.createElement('button');
       b.className = 'tile' + (it.type === 'video' ? ' is-video' : '');
       const src = it.type === 'photo' ? it.src : it.poster;
@@ -104,7 +117,7 @@
         <span class="cap"><b>${esc(it.title)}</b>${esc(meta)}</span>`;
       b.setAttribute('aria-label', (it.type === 'video' ? 'Play ' : 'Open ') + it.title);
       b.addEventListener('click', () => Viewer.open(list, idx));
-      grid.appendChild(b);
+      cols.appendChild(b);
     });
   }
   draw();
