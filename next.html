@@ -36,8 +36,12 @@
     <div class="wrap">
       <div class="tabs" role="tablist" id="tabs">
         <button class="tab" role="tab" data-tab="start">Start here</button>
+        <button class="tab" role="tab" data-tab="roadmap">Roadmap</button>
         <button class="tab" role="tab" data-tab="colleges">Colleges</button>
-        <button class="tab" role="tab" data-tab="auditions">Auditions and scholarships</button>
+        <button class="tab" role="tab" data-tab="auditions">Auditions</button>
+        <button class="tab" role="tab" data-tab="calls">Open calls</button>
+        <button class="tab" role="tab" data-tab="money">Money</button>
+        <button class="tab" role="tab" data-tab="prep">Get ready</button>
         <button class="tab" role="tab" data-tab="careers">Careers</button>
         <button class="tab" role="tab" data-tab="jobs">Who's hiring</button>
         <button class="tab" role="tab" data-tab="mine">My list <span id="mine-n" class="muted"></span></button>
@@ -63,6 +67,18 @@
     </div>
   </section>
 
+  <!-- ROADMAP -->
+  <section class="wrap section" data-panel="roadmap" hidden>
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Senior year, month by month</p>
+        <h2>From now to move-in day.</h2>
+      </div>
+      <button class="chip" id="road-mine" aria-pressed="false">Only my list</button>
+    </div>
+    <div id="road" class="road"></div>
+  </section>
+
   <!-- COLLEGES -->
   <section class="wrap section" data-panel="colleges" hidden>
     <div class="filters">
@@ -71,6 +87,7 @@
     <div class="filters">
       <input class="search" id="college-q" type="search" placeholder="Search schools, cities, styles" aria-label="Search colleges">
       <button class="chip" id="college-prescreen" aria-pressed="false">Needs a prescreen video</button>
+      <select class="sort" id="college-sort" aria-label="Sort colleges"></select>
     </div>
     <p class="count" id="college-count"></p>
     <div class="cards" id="college-cards"></div>
@@ -85,6 +102,65 @@
     </div>
     <p class="count" id="aud-count"></p>
     <div class="cards" id="aud-cards"></div>
+  </section>
+
+  <!-- OPEN CALLS -->
+  <section class="wrap section" data-panel="calls" hidden>
+    <p class="eyebrow">Open calls</p>
+    <h2 style="margin-bottom:12px">Real auditions, posted right now.</h2>
+    <p class="lede" style="margin-bottom:8px">Cruise lines, theme parks, Broadway, touring shows and dance companies. Each card says whether you can walk in at 17 or have to wait until you turn 18.</p>
+    <div class="filters"><div class="chips" id="call-types"></div></div>
+    <div class="filters">
+      <input class="search" id="call-q" type="search" placeholder="Search shows, cruise lines, cities" aria-label="Search open calls">
+      <button class="chip" id="call-now" aria-pressed="false">Only ones I can go to now</button>
+    </div>
+    <p class="count" id="call-count"></p>
+    <div class="cards" id="call-cards"></div>
+  </section>
+
+  <!-- MONEY -->
+  <section class="wrap section" data-panel="money" hidden>
+    <p class="eyebrow">Money</p>
+    <h2 style="margin-bottom:12px">What it really costs, and who helps pay.</h2>
+    <p class="lede" style="margin-bottom:24px">Sticker price and real price are different numbers. The real cost after aid comes from the U.S. Department of Education's College Scorecard: what families actually paid on average.</p>
+    <p class="note" id="bf" hidden></p>
+    <div id="cost-wrap" hidden style="margin-top:32px">
+      <h3 style="margin-bottom:12px">Every college, cheapest real cost first</h3>
+      <div class="ct" id="cost-table"></div>
+    </div>
+    <div style="margin-top:48px">
+      <h3>Scholarships</h3>
+      <div class="filters"><div class="chips" id="money-types"></div></div>
+      <div class="filters"><input class="search" id="money-q" type="search" placeholder="Search scholarships" aria-label="Search scholarships"></div>
+      <p class="count" id="money-count"></p>
+      <div class="cards" id="money-cards"></div>
+    </div>
+  </section>
+
+  <!-- GET READY -->
+  <section class="wrap section" data-panel="prep" hidden>
+    <p class="eyebrow">Get ready</p>
+    <h2 style="margin-bottom:12px">What every school actually asks for.</h2>
+    <p class="muted" id="prep-wait">The audition requirements for every school are being pulled from their official pages.</p>
+    <div id="prep-ready" hidden>
+      <div class="two" style="margin-top:24px">
+        <div>
+          <h3 style="margin-bottom:8px">Film day checklist</h3>
+          <p class="muted small" style="margin:0 0 8px">Every line comes from a rule at least one of your schools wrote down.</p>
+          <ul class="checklist" id="prep-film"></ul>
+        </div>
+        <div>
+          <h3 style="margin-bottom:8px">What the schools have in common</h3>
+          <ul class="awards" id="prep-patterns"></ul>
+        </div>
+      </div>
+      <div class="section-head" style="margin-top:48px">
+        <h3>School by school</h3>
+        <button class="chip" id="prep-all" aria-pressed="false">Show every school</button>
+      </div>
+      <p class="muted" id="prep-empty">Star a college and its exact requirements show up here. Or tap Show every school.</p>
+      <div class="cards" id="prep-cards"></div>
+    </div>
   </section>
 
   <!-- CAREERS -->
@@ -115,8 +191,17 @@
   <section class="wrap section" data-panel="mine" hidden>
     <p class="eyebrow">My list</p>
     <h2 style="margin-bottom:12px">Your shortlist.</h2>
-    <p class="muted" id="mine-empty">Nothing saved yet. Tap the star on any school, audition or company and it shows up here. It's saved on this phone or computer.</p>
-    <div class="cards" id="mine-cards"></div>
+    <div class="note" id="shared" hidden style="margin:16px 0 24px">
+      <p id="shared-text" style="margin:0 0 12px"></p>
+      <button class="btn" id="shared-add">Add them to my list</button>
+      <div class="cards" id="shared-cards"></div>
+    </div>
+    <p class="muted" id="mine-empty">Nothing saved yet. Tap the star on any school, audition, open call or company and it shows up here. It's saved on this phone or computer.</p>
+    <div id="mine-tools" class="filters" hidden>
+      <button class="btn ghost" id="mine-share">Share my list</button>
+      <span class="muted small" id="mine-share-msg">Send it to Dixon or your mom. The link carries your picks.</span>
+    </div>
+    <div id="mine-cards"></div>
   </section>
 </main>
 

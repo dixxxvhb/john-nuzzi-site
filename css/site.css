@@ -308,3 +308,45 @@ details.path .body b { font-weight: 500; }
   .tile .cap b { font-size: 13px; }
   .tile .play { width: 32px; height: 32px; top: 8px; right: 8px; }
 }
+
+/* ---------- What's Next, round two ---------- */
+.small { font-size: 14px; }
+.sort {
+  min-height: 40px; border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 14px;
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--brown); background: var(--white);
+}
+.card .cost { display: grid; gap: 4px; margin: 0; padding: 12px 14px; background: var(--sky-soft); border-radius: var(--radius-sm); font-size: 14px; }
+.card .cost b { font-weight: 700; font-size: 16px; }
+.mine-dot { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--cocoa); margin-left: 6px; white-space: nowrap; }
+
+.road { display: grid; gap: 0; }
+.month { padding: 28px 0; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+@media (min-width: 860px) { .month { grid-template-columns: 220px 1fr; column-gap: 40px; } .month .soon, .month > .muted { grid-column: 2; } .month .phase { grid-column: 2; grid-row: 1; } .month-head { grid-row: 1 / span 2; } }
+.month-head { display: flex; gap: 10px; align-items: center; align-self: start; }
+@media (min-width: 860px) { .month-head { position: sticky; top: 128px; } }
+.month-head h3 { font-size: 20px; }
+.month.now .month-head h3 { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 6px; text-decoration-color: var(--sky); }
+.month .phase { margin: 0; color: var(--cocoa); font-size: 16px; }
+.month .soon li:first-child { border-top: 0; }
+
+.ct { border-top: 1px solid var(--line); }
+.ct-head, .ct-row { display: grid; grid-template-columns: 1fr 110px 120px; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); align-items: center; }
+.ct-head { font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.ct-head span:not(:first-child), .ct-row span:not(:first-child) { text-align: right; font-variant-numeric: tabular-nums; }
+.ct-row b { font-weight: 500; display: block; }
+.ct-row small { color: var(--muted); font-size: 13px; }
+.ct-row i { font-style: normal; color: var(--muted); font-size: 13px; }
+@media (max-width: 560px) { .ct-head, .ct-row { grid-template-columns: 1fr 84px 92px; gap: 8px; font-size: 14px; } .ct-head { font-size: 10px; letter-spacing: 0.06em; } }
+
+.status-head { font-size: 18px; margin: 32px 0 0; }
+.status-head .muted { font-weight: 300; }
+.tracked { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.tracked .card { border: 0; border-radius: 0; }
+.tracker { display: grid; gap: 10px; padding: 16px 22px 20px; background: var(--sky-soft); }
+.tk-label { display: grid; gap: 4px; font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cocoa); }
+.tracker select, .tracker textarea {
+  font: inherit; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--brown);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm); padding: 10px 12px; background: var(--white); min-height: 44px; width: 100%;
+}
+.tracker textarea { resize: vertical; }
+#shared-cards { margin-top: 8px; }
