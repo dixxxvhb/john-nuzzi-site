@@ -350,3 +350,4 @@ details.path .body b { font-weight: 500; }
 }
 .tracker textarea { resize: vertical; }
 #shared-cards { margin-top: 8px; }
+#prep-patterns { columns: 1; }
