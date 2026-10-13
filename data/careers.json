@@ -1,602 +1,752 @@
 {
-  "updated": "2026-10-13",
-  "paths": [
+ "updated": "2026-10-13",
+ "paths": [
+  {
+   "id": "concert-company",
+   "title": "Concert / contemporary company dancer",
+   "what": "You dance full seasons with a company that makes its own repertory and performs it in theaters and on tour.",
+   "how_in": "Most dancers get in through a company's school, summer intensive, trainee program or second company, then get pulled up; open company auditions exist but are few and competitive.",
+   "training": "Years of daily technique (ballet plus modern/contemporary). Some go to a BFA program first, others go straight from a trainee or second company. No degree is strictly required.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025; BLS lists an hourly figure only)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
     {
-      "id": "concert-company",
-      "title": "Concert / contemporary company dancer",
-      "what": "You dance full seasons with a company that makes its own repertory and performs it in theaters and on tour.",
-      "how_in": "Most dancers get in through a company's school, summer intensive, trainee program or second company, then get pulled up; open company auditions exist but are few and competitive.",
-      "training": "Years of daily technique (ballet plus modern/contemporary). Some go to a BFA program first, others go straight from a trainee or second company. No degree is strictly required.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025; BLS lists an hourly figure only)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "BLS: Dancers and Choreographers", "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"},
-        {"label": "Dance/USA jobs and auditions", "url": "https://www.danceusa.org/jobsandauditions"},
-        {"label": "Philadanco D/2 auditions (ages 16-23)", "url": "https://philadanco.org/event/d-2-apprentice-company-auditions/"}
-      ]
+     "label": "BLS: Dancers and Choreographers",
+     "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"
     },
     {
-      "id": "commercial",
-      "title": "Commercial dancer (music videos, tours, TV, award shows)",
-      "what": "You dance behind artists and on camera: music videos, concert tours, TV, commercials and live events.",
-      "how_in": "Agency representation is the main door, mostly in Los Angeles, plus taking class at the industry studios and being seen by choreographers who book jobs.",
-      "training": "Strong hip hop and commercial jazz, fast pickup, camera presence and freestyle. No degree needed. A reel and a headshot are your resume.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "MSA Agency dance division", "url": "https://www.msaagency.com/dance-division/"},
-        {"label": "Go 2 Talent submissions", "url": "https://www.go2talentagency.com/contact"}
-      ]
+     "label": "Dance/USA jobs and auditions",
+     "url": "https://www.danceusa.org/jobsandauditions"
     },
     {
-      "id": "broadway",
-      "title": "Broadway and national tours (musical theatre)",
-      "what": "You dance in the ensemble of a musical on Broadway or on a touring production, eight shows a week.",
-      "how_in": "Open calls and appointments listed on Playbill, Backstage and Actors' Equity; non-union tours are a common first step before joining Equity.",
-      "training": "Jazz, ballet, tap and contemporary, plus singing. Many come from BFA musical theatre or dance programs, but booking the job is what counts.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "Playbill job board (Performer category)", "url": "https://playbill.com/jobs"},
-        {"label": "Actors' Equity: how to join", "url": "https://www.actorsequity.org/join"}
-      ]
-    },
-    {
-      "id": "theme-park",
-      "title": "Theme park performer",
-      "what": "You perform in parades, stage shows and seasonal events at parks like Walt Disney World, Universal Orlando and SeaWorld.",
-      "how_in": "Each park posts its own auditions online; Orlando has more of these than almost anywhere, and seasonal shows (Halloween, holiday) are a common first booking.",
-      "training": "Versatile jazz, hip hop and musical theatre dance, quick pickup, stamina for outdoor heat. No degree needed.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "Disney Auditions", "url": "https://www.disneycareers.com/auditions"},
-        {"label": "Universal Orlando Auditions", "url": "https://auditions.universalorlando.com/"}
-      ]
-    },
-    {
-      "id": "cruise",
-      "title": "Cruise ship performer",
-      "what": "You live on a ship for a contract of several months and dance in the production shows.",
-      "how_in": "Cruise lines hold open calls in many cities (including Orlando) and some take online submissions through a casting profile.",
-      "training": "Ballet, jazz, contemporary and hip hop, partnering and lifts; singing helps a lot. No degree needed. Most lines require 18 or older to be hired, some 20 or 21.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "Royal Caribbean Productions upcoming auditions", "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/"},
-        {"label": "Carnival Entertainment auditions", "url": "https://www.carnivalentertainment.com/auditions"}
-      ]
-    },
-    {
-      "id": "cirque-specialty",
-      "title": "Cirque and specialty shows",
-      "what": "You dance in large-scale acrobatic or resident shows, often in Las Vegas or on tour.",
-      "how_in": "Apply online through the casting site with a video demo; Cirque keeps applicants on file and calls them for specific roles.",
-      "training": "Strong technique in one or more styles; acrobatics, tumbling or partnering are a big plus. Cirque requires applicants to be at least 18.",
-      "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "Cirque du Soleil casting FAQ", "url": "https://casting.cirquedusoleil.com/faq"}
-      ]
-    },
-    {
-      "id": "choreographer",
-      "title": "Choreographer (stage, concert, commercial)",
-      "what": "You create the movement for companies, shows, artists, videos or theme park productions.",
-      "how_in": "Almost everyone starts as a dancer, then builds a body of their own work: student pieces, showcases, festivals, assisting other choreographers.",
-      "training": "Dance experience plus composition classes. BLS says some employers prefer a bachelor's degree in dance or a related field.",
-      "pay": "$26.59 an hour (BLS median for choreographers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "BLS: Dancers and Choreographers", "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"}
-      ]
-    },
-    {
-      "id": "competition-choreographer",
-      "title": "Competition and studio choreographer",
-      "what": "You set solos, duets and group pieces for studios that compete, usually as a freelancer traveling between studios.",
-      "how_in": "Word of mouth: dancers with strong competition results and their own choreography get asked by studio owners, often starting with solos for younger dancers.",
-      "training": "Competition experience and a portfolio of pieces that placed. No degree required.",
-      "pay": "$26.59 an hour (BLS median for choreographers, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
-      "links": [
-        {"label": "BLS: Dancers and Choreographers", "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"}
-      ]
-    },
-    {
-      "id": "studio-teacher-owner",
-      "title": "Dance teacher and studio owner",
-      "what": "You teach classes at a private studio, and later maybe run your own.",
-      "how_in": "Most start by assisting classes as teens (like you already do), then get their own classes; owning a studio means running a small business on top of teaching.",
-      "training": "Teaching experience and technique in the styles you teach. No license required for private studios. Business skills matter for owners.",
-      "pay": null,
-      "pay_source": null,
-      "links": [
-        {"label": "NDEO jobs board", "url": "https://www.ndeo.org/Connect/Jobs-Board"}
-      ]
-    },
-    {
-      "id": "convention-faculty",
-      "title": "Convention faculty and assistant",
-      "what": "You travel with a dance convention on weekends, assisting a teacher onstage or teaching your own classes.",
-      "how_in": "Conventions pick from dancers they already know: scholarship winners and VIPs, then assistants, then faculty.",
-      "training": "A strong competition and convention track record and a teacher who vouches for you.",
-      "pay": null,
-      "pay_source": null,
-      "links": [
-        {"label": "JUMP scholarship and VIP info", "url": "https://jumptour.com/scholarship-info/"},
-        {"label": "DanceOne careers", "url": "https://dance.one/careers/"}
-      ]
-    },
-    {
-      "id": "k12-educator",
-      "title": "K-12 dance teacher (certified) or college dance professor",
-      "what": "You teach dance in a public or private school, or in a college dance department.",
-      "how_in": "Earn a bachelor's (often in dance education), complete student teaching and pass your state's teaching exams; college teaching usually needs an MFA plus a professional career.",
-      "training": "Bachelor's degree and a state teaching certificate for public schools; an MFA is the usual degree for college faculty.",
-      "pay": "High school teachers: $72,040 a year (BLS median, May 2025). College art, drama and music teachers: $78,620 a year (BLS, May 2025).",
-      "pay_source": "https://www.bls.gov/ooh/education-training-and-library/high-school-teachers.htm",
-      "links": [
-        {"label": "BLS: High School Teachers", "url": "https://www.bls.gov/ooh/education-training-and-library/high-school-teachers.htm"},
-        {"label": "BLS: Postsecondary Teachers", "url": "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm"},
-        {"label": "NDEO K-12 dance education careers", "url": "https://www.ndeo.org/Learn/K-12-Dance-Education-Careers"}
-      ]
-    },
-    {
-      "id": "dance-movement-therapy",
-      "title": "Dance/movement therapist",
-      "what": "You use movement as therapy to help people with mental, emotional and physical health.",
-      "how_in": "A master's from an ADTA-approved program (or ADTA's alternate route), then the R-DMT credential, then the advanced BC-DMT.",
-      "training": "Bachelor's (dance and psychology are good prep), then a required master's degree.",
-      "pay": null,
-      "pay_source": null,
-      "links": [
-        {"label": "ADTA: Become a dance/movement therapist", "url": "https://www.adta.org/become-a-dance-movement-therapist"}
-      ]
-    },
-    {
-      "id": "physical-therapy",
-      "title": "Physical therapist / dance medicine",
-      "what": "You treat injuries and keep dancers and athletes moving; some PTs specialize in dancers.",
-      "how_in": "Bachelor's degree with science prerequisites, then a Doctor of Physical Therapy (DPT) program and a state license.",
-      "training": "DPT (doctoral) degree and a license in every state.",
-      "pay": "$102,760 a year (BLS median, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/healthcare/physical-therapists.htm",
-      "links": [
-        {"label": "BLS: Physical Therapists", "url": "https://www.bls.gov/ooh/healthcare/physical-therapists.htm"}
-      ]
-    },
-    {
-      "id": "arts-admin",
-      "title": "Arts administration",
-      "what": "You run the business side of dance: company management, marketing, development, education programs, booking.",
-      "how_in": "Internships and entry-level jobs at companies and arts organizations; many former dancers move into these roles.",
-      "training": "Bachelor's degree is common; some get an MA in arts administration later.",
-      "pay": null,
-      "pay_source": null,
-      "links": [
-        {"label": "Dance/USA jobs and auditions", "url": "https://www.danceusa.org/jobsandauditions"},
-        {"label": "Dance/NYC listings", "url": "https://www.dance.nyc/for-artists/listings/"}
-      ]
-    },
-    {
-      "id": "content-creator",
-      "title": "Film, TV and social content creator",
-      "what": "You build an audience with your own dance videos and choreography online, which can lead to brand deals, classes and bookings.",
-      "how_in": "Post consistently, find your style, collaborate with other creators; there is no audition, just the work.",
-      "training": "Filming and editing skills on top of dance. No degree needed.",
-      "pay": null,
-      "pay_source": null,
-      "links": []
-    },
-    {
-      "id": "fitness",
-      "title": "Fitness instructor (barre, Pilates, dance fitness)",
-      "what": "You teach group fitness or private sessions, a common side job and second career for dancers.",
-      "how_in": "Get certified in a method, then teach at studios or gyms; many dancers start this while still performing.",
-      "training": "High school diploma plus certification; BLS says most instructors hold a certification and need CPR/first aid.",
-      "pay": "$47,160 a year, or $22.67 an hour (BLS median, May 2025)",
-      "pay_source": "https://www.bls.gov/ooh/personal-care-and-service/fitness-trainers-and-instructors.htm",
-      "links": [
-        {"label": "BLS: Fitness Trainers and Instructors", "url": "https://www.bls.gov/ooh/personal-care-and-service/fitness-trainers-and-instructors.htm"},
-        {"label": "Pilates Method Alliance", "url": "https://www.pilatesmethodalliance.org/"}
-      ]
+     "label": "Philadanco D/2 auditions (ages 16-23)",
+     "url": "https://philadanco.org/event/d-2-apprentice-company-auditions/"
     }
-  ],
-  "employers": [
+   ]
+  },
+  {
+   "id": "commercial",
+   "title": "Commercial dancer (music videos, tours, TV, award shows)",
+   "what": "You dance behind artists and on camera: music videos, concert tours, TV, commercials and live events.",
+   "how_in": "Agency representation is the main door, mostly in Los Angeles, plus taking class at the industry studios and being seen by choreographers who book jobs.",
+   "training": "Strong hip hop and commercial jazz, fast pickup, camera presence and freestyle. No degree needed. A reel and a headshot are your resume.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
     {
-      "id": "disney-wdw",
-      "name": "Disney Auditions (Walt Disney World, Disney Live Entertainment)",
-      "type": "theme-park",
-      "location": "Orlando, FL (also Disneyland and international parks)",
-      "min_age": "Not stated on the main auditions page; each posting sets its own. News coverage has reported 16 for some Walt Disney World character roles, so check the posting.",
-      "auditions": "Auditions are posted on the Disney Auditions page with a filter by park and city; you need a Disney Auditions profile to sign up.",
-      "why_john": "The biggest dance employer in your backyard, and it casts all year.",
-      "url": "https://www.disneycareers.com/auditions",
-      "verified": true
+     "label": "MSA Agency dance division",
+     "url": "https://www.msaagency.com/dance-division/"
     },
     {
-      "id": "disney-cruise",
-      "name": "Disney Cruise Line",
-      "type": "cruise",
-      "location": "Auditions listed by city on Disney Auditions",
-      "min_age": "Past mainstage dancer calls (2023, posted on Dance/NYC) said performers must be 18 or older.",
-      "auditions": "Listed on the same Disney Auditions page; past calls were in person only with a Disney Auditions profile and appointment.",
-      "why_john": "Mainstage shows are musical-theatre style, a fit for your jazz and contemporary.",
-      "url": "https://www.disneycareers.com/auditions",
-      "verified": false
-    },
-    {
-      "id": "universal-orlando",
-      "name": "Universal Orlando Resort Entertainment",
-      "type": "theme-park",
-      "location": "Orlando, FL",
-      "min_age": "The 2026 holiday parade call (reported by WDWNT) required 18 or older.",
-      "auditions": "Calls are posted on Universal's audition site for parades, Halloween Horror Nights and Epic Universe shows, usually with a video submission first.",
-      "why_john": "Seasonal shows like the holiday parade are a classic first professional booking in Orlando.",
-      "url": "https://auditions.universalorlando.com/",
-      "verified": false
-    },
-    {
-      "id": "seaworld-busch",
-      "name": "SeaWorld Orlando and Busch Gardens Tampa Bay (United Parks)",
-      "type": "theme-park",
-      "location": "Orlando and Tampa, FL",
-      "min_age": "A 2026 seasonal SeaWorld Orlando dancer posting (third-party job board) said 18 or older.",
-      "auditions": "Seasonal live auditions (summer shows, Christmas shows) are posted under the Entertainment team on the United Parks careers site.",
-      "why_john": "Past calls asked for jazz, hip hop and jazz fusion, which is right in your lane.",
-      "url": "https://careers.seaworldparks.com/Home/Sites/All",
-      "verified": false
-    },
-    {
-      "id": "royal-caribbean",
-      "name": "Royal Caribbean Productions",
-      "type": "cruise",
-      "location": "Auditions worldwide, including Orlando",
-      "min_age": "\"You must be 18 years of age or older to be hired.\" An Orlando call held at Orlando Ballet listed dancers as 18+.",
-      "auditions": "Auditions year round in over 60 cities; if you cannot attend, you can create a casting profile and submit online.",
-      "why_john": "They have held auditions right here at Orlando Ballet.",
-      "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/",
-      "verified": true
-    },
-    {
-      "id": "carnival",
-      "name": "Carnival Entertainment",
-      "type": "cruise",
-      "location": "Auditions worldwide, including Orlando (Studio K, 2100 Orinoco Dr)",
-      "min_age": "Dancers Who Sing and Singers Who Dance: \"at least 20 years old.\"",
-      "auditions": "Pre-registration open calls listed on the auditions page; an Orlando call for Dancers Who Sing was held October 13, 2026.",
-      "why_john": "They audition in Orlando, but you would need to be 20, so this is a later target.",
-      "url": "https://www.carnivalentertainment.com/auditions",
-      "verified": true
-    },
-    {
-      "id": "nclh",
-      "name": "NCLH Creative Studios (Norwegian Cruise Line Holdings)",
-      "type": "cruise",
-      "location": "Riverview, FL studio; auditions worldwide",
-      "min_age": "Not stated on the auditions page; a 2025 Chicago call on Playbill said you must be 18 to apply.",
-      "auditions": "Runs online general submissions year round plus in-person dancer calls in rotating cities.",
-      "why_john": "Online submissions mean you can apply from Orlando once you are 18.",
-      "url": "https://www.nclhcreativestudios.com/auditions.html",
-      "verified": true
-    },
-    {
-      "id": "virgin-voyages",
-      "name": "Virgin Voyages",
-      "type": "cruise",
-      "location": "Caribbean and Mediterranean sailings",
-      "min_age": "Not stated on the careers page; a 2023 dancer call said 21+ to work onboard.",
-      "auditions": "Entertainment roles are posted on the shipboard careers page; past dancer calls asked for contemporary, commercial, hip hop and breaking.",
-      "why_john": "Their shows lean contemporary and commercial instead of classic revue.",
-      "url": "https://www.virginvoyages.com/careers/shipboard",
-      "verified": false
-    },
-    {
-      "id": "cirque",
-      "name": "Cirque du Soleil",
-      "type": "other",
-      "location": "Las Vegas, touring, worldwide",
-      "min_age": "\"Applicants must be at least 18 years old.\"",
-      "auditions": "Apply online to a specific posting with a CV, headshot, full-body photo and video demo (12 minutes or less).",
-      "why_john": "Dance categories include contemporary, hip hop, tap and jazz, so you can build a file once you turn 18.",
-      "url": "https://casting.cirquedusoleil.com/faq",
-      "verified": true
-    },
-    {
-      "id": "radio-city",
-      "name": "Radio City Christmas Spectacular (Rockettes and ensemble)",
-      "type": "other",
-      "location": "New York, NY",
-      "min_age": "\"All performers must be 18 years of age by the first day of rehearsals to be considered for casting.\"",
-      "auditions": "Open call once a year in spring at Radio City Music Hall with advance registration; 2026 registration is closed.",
-      "why_john": "The Rockettes are a women's line; the page does not say whether men can audition for the ensemble, so ask before you plan around it.",
-      "url": "https://www.rockettes.com/?p=16696",
-      "verified": false
-    },
-    {
-      "id": "networks",
-      "name": "NETworks (Broadway national tours)",
-      "type": "tour",
-      "location": "National tours",
-      "min_age": null,
-      "auditions": "The jobs page lists crew, music and tour management roles; performer calls for tours show up on boards like Playbill and Backstage.",
-      "why_john": "Tours are how most dancers first work in Broadway shows outside New York.",
-      "url": "https://www.networkstours.com/jobs/",
-      "verified": true
-    },
-    {
-      "id": "orlando-magic-407",
-      "name": "Orlando Magic: The 407",
-      "type": "sports",
-      "location": "Orlando, FL",
-      "min_age": null,
-      "auditions": "Co-ed hip hop crew launched in 2019 to replace the Magic Dancers, cast through an open call announced by the team; no current call found.",
-      "why_john": "A home-team co-ed hip hop crew that takes men.",
-      "url": "https://www.nba.com/magic/entertainment",
-      "verified": false
-    },
-    {
-      "id": "memphis-hustle",
-      "name": "Memphis Hustle Hype Crew (NBA G League)",
-      "type": "sports",
-      "location": "Memphis area (Landers Center)",
-      "min_age": "\"performers ages 18 and up of all backgrounds\"",
-      "auditions": "Yearly open tryouts in September with a free clinic the week before.",
-      "why_john": "A confirmed co-ed hip hop team, a model for what sports entertainment jobs for men look like.",
-      "url": "https://memphis.gleague.nba.com/news/memphis-hustle-to-hold-auditions-for-2026-27-hustle-hype-crew",
-      "verified": true
-    },
-    {
-      "id": "orlando-ballet",
-      "name": "Orlando Ballet (company)",
-      "type": "company",
-      "location": "Orlando, FL",
-      "min_age": null,
-      "auditions": "Send a video and materials for review, then register for an in-person audition through Dance Apply; right now all company and second company spots are filled. No audition fee.",
-      "why_john": "Your hometown professional company, and it does contemporary repertory too.",
-      "url": "https://orlandoballet.org/company-auditions/",
-      "verified": true
-    },
-    {
-      "id": "orlando-ballet-ii",
-      "name": "Orlando Ballet II and Trainee programs",
-      "type": "second-company",
-      "location": "Orlando, FL",
-      "min_age": "OBII and Trainee: \"Age 16-21 by Audition only\"",
-      "auditions": "In-person auditions in May and August before each school year, or a video audition until December 31.",
-      "why_john": "You are in the age window right now, and it is in Orlando; it is ballet-heavy, so your classical has to be strong.",
-      "url": "https://orlandoballet.org/second-company/",
-      "verified": true
-    },
-    {
-      "id": "dance-theatre-of-orlando",
-      "name": "Dance Theatre of Orlando",
-      "type": "company",
-      "location": "Orlando, FL (Marshall Ellis Theatre, 1300 La Quinta Dr)",
-      "min_age": null,
-      "auditions": "Small contemporary company (formerly ME Dance) with company members, apprentices and trainees per past show listings; no public audition page found, so contact them directly.",
-      "why_john": "A local contemporary company where an apprentice or trainee spot is realistic.",
-      "url": "https://marshallellisdanceschool.com/dance-theatre-of-orlando",
-      "verified": false
-    },
-    {
-      "id": "central-florida-ballet",
-      "name": "Central Florida Ballet",
-      "type": "other",
-      "location": "Orlando, FL",
-      "min_age": "Studio Company: ages 7 through 17. Nutcracker: freelance professionals and students ages 5 and up (per its Nutcracker audition page).",
-      "auditions": "Studio Company and Nutcracker auditions have been held in August.",
-      "why_john": "Mostly a training program, but Nutcracker casting takes freelancers, which is stage time close to home.",
-      "url": "https://centralfloridaballet.com/studio-company-cfb",
-      "verified": false
-    },
-    {
-      "id": "ailey-ii",
-      "name": "Ailey II",
-      "type": "second-company",
-      "location": "New York, NY",
-      "min_age": null,
-      "auditions": "Invitation only, mainly from students in The Ailey School's full-time programs.",
-      "why_john": "The way in is The Ailey School first, see the next entry.",
-      "url": "https://ailey.org/careers/company-auditions",
-      "verified": false
-    },
-    {
-      "id": "ailey-school",
-      "name": "The Ailey School Professional Division (Certificate Program)",
-      "type": "other",
-      "location": "New York, NY",
-      "min_age": "Certificate Program: ages 17 to 23 who have completed secondary school.",
-      "auditions": "Audition tour runs January to February; 2027 dates are announced in October. Video auditions are not currently accepted.",
-      "why_john": "You fit the age range and could audition this winter for fall 2027, right after graduation.",
-      "url": "https://ailey.org/training/audition-tour",
-      "verified": true
-    },
-    {
-      "id": "philadanco-d2",
-      "name": "Philadanco D/2",
-      "type": "second-company",
-      "location": "Philadelphia, PA",
-      "min_age": "Ages 16-23",
-      "auditions": "Yearly apprentice company audition in January ($15 cash fee in 2026).",
-      "why_john": "You can audition at 17, and it is a real performing second company (about 25 shows a year).",
-      "url": "https://philadanco.org/event/d-2-apprentice-company-auditions/",
-      "verified": true
-    },
-    {
-      "id": "dbdt-encore",
-      "name": "Dallas Black Dance Theatre: Encore!",
-      "type": "second-company",
-      "location": "Dallas, TX",
-      "min_age": null,
-      "auditions": "Applications (headshot, resume, dance photos, reel) due in February, then invitation-only in-person auditions in March.",
-      "why_john": "Seeks early career dancers with modern and classical training.",
-      "url": "https://www.dbdt.com/auditions",
-      "verified": true
-    },
-    {
-      "id": "giordano-ii",
-      "name": "Giordano II (Giordano Dance Chicago)",
-      "type": "second-company",
-      "location": "Chicago, IL",
-      "min_age": "Not on the current page; a 2018 call required age 22, so check.",
-      "auditions": "Yearly audition (the 2025 one was in NYC in February) with reel, headshot and resume; positions are paid.",
-      "why_john": "America's original jazz company, a strong fit for your jazz.",
-      "url": "https://giordanodance.org/audition",
-      "verified": false
-    },
-    {
-      "id": "hubbard-street",
-      "name": "Hubbard Street Dance Chicago",
-      "type": "company",
-      "location": "Chicago, IL",
-      "min_age": "Summer intensives: 13-17 and 18-25 tracks.",
-      "auditions": "Hubbard Street 2 was suspended in December 2016; the training path now runs through summer intensive auditions held each winter.",
-      "why_john": "A top contemporary company; the summer intensive is the way to get seen.",
-      "url": "https://www.hubbardstreetdance.com/summer-audition",
-      "verified": false
-    },
-    {
-      "id": "graham-2",
-      "name": "Graham 2 (Martha Graham)",
-      "type": "second-company",
-      "location": "New York, NY",
-      "min_age": null,
-      "auditions": "Pre-professional company drawn from advanced Martha Graham School students; admission by audition or faculty recommendation.",
-      "why_john": "A modern-dance second company if you go the NYC training route.",
-      "url": "https://marthagraham.edu/graham2/",
-      "verified": false
-    },
-    {
-      "id": "complexions",
-      "name": "Complexions Contemporary Ballet (Complexions Academy)",
-      "type": "second-company",
-      "location": "New York, NY",
-      "min_age": null,
-      "auditions": "All academy programs need an in-person or video audition through DanceApply; company members have come up through the intensives, some as apprentices.",
-      "why_john": "Contemporary ballet with big partnering, and the academy is the pipeline.",
-      "url": "https://www.complexionsacademy.com/audition",
-      "verified": true
-    },
-    {
-      "id": "msa",
-      "name": "MSA Agency",
-      "type": "agency",
-      "location": "Los Angeles and New York",
-      "min_age": null,
-      "auditions": "No open calls listed; submit through the Talent Seeking Representation form with headshot, resume and videos.",
-      "why_john": "A major dance agency; you can submit from anywhere.",
-      "url": "https://www.msaagency.com/dance-division/",
-      "verified": true
-    },
-    {
-      "id": "go2talent",
-      "name": "Go 2 Talent Agency",
-      "type": "agency",
-      "location": "Los Angeles",
-      "min_age": null,
-      "auditions": "Online submission form; the site says no auditions or class observations are scheduled right now.",
-      "why_john": "A boutique agency that only reps dancers and choreographers.",
-      "url": "https://www.go2talentagency.com/contact",
-      "verified": true
-    },
-    {
-      "id": "bloc",
-      "name": "Bloc Agency",
-      "type": "agency",
-      "location": "Los Angeles, New York, Atlanta, Toronto, Vancouver, London",
-      "min_age": null,
-      "auditions": "No submission policy found on the site; check each city office page.",
-      "why_john": null,
-      "url": "https://www.blocagency.com/",
-      "verified": false
-    },
-    {
-      "id": "clear-talent",
-      "name": "Clear Talent Group",
-      "type": "agency",
-      "location": "Los Angeles and New York",
-      "min_age": null,
-      "auditions": "No submission policy found on the site.",
-      "why_john": null,
-      "url": "https://www.cleartalentgroup.com/",
-      "verified": false
-    },
-    {
-      "id": "cesd",
-      "name": "CESD Talent",
-      "type": "agency",
-      "location": "Los Angeles and New York",
-      "min_age": null,
-      "auditions": "Fill out the online form for on-camera and dance representation; the roster includes teens.",
-      "why_john": "Has a teens category, so it is one agency that works with dancers your age.",
-      "url": "https://cesdtalent.com/",
-      "verified": true
-    },
-    {
-      "id": "jump",
-      "name": "JUMP Dance Convention (DanceOne)",
-      "type": "convention",
-      "location": "Touring; The Dance Awards 2027 in Orlando (June 26 to July 3) and Las Vegas",
-      "min_age": "VIP Senior division: 16-19 (age as of January 1, 2027)",
-      "auditions": "VIP scholarship audition at each regional workshop; winners and runners-up qualify for Best Dancer at The Dance Awards.",
-      "why_john": "VIP is your road to The Dance Awards, and the Orlando finals are local.",
-      "url": "https://jumptour.com/scholarship-info/",
-      "verified": true
-    },
-    {
-      "id": "radix",
-      "name": "RADIX Dance Convention",
-      "type": "convention",
-      "location": "Touring",
-      "min_age": "Protégé Senior: 16-19; dancers 20 and older are not eligible for scholarships",
-      "auditions": "Protégé scholarship audition class at each full workshop.",
-      "why_john": "Another scholarship ladder that convention faculty watch.",
-      "url": "https://radixdance.com/protege-info/",
-      "verified": true
-    },
-    {
-      "id": "nycda",
-      "name": "New York City Dance Alliance (NYCDA)",
-      "type": "convention",
-      "location": "Touring; Nationals in NYC",
-      "min_age": null,
-      "auditions": "Outstanding Dancer programs at regionals and nationals, plus a College Scholarship Audition through the NYCDA Foundation.",
-      "why_john": "The College Scholarship Audition can turn into money for a BFA.",
-      "url": "https://www.nycdance.com/foundation/college-scholarship-audition",
-      "verified": true
-    },
-    {
-      "id": "danceone-careers",
-      "name": "DanceOne (JUMP, NUVO, 24 Seven, The Dance Awards) company jobs",
-      "type": "other",
-      "location": "Orlando, FL and remote",
-      "min_age": null,
-      "auditions": "Staff jobs posted on the careers page; current openings include Orlando tech and warehouse roles and a remote junior social media role.",
-      "why_john": "The company behind the conventions you compete at has jobs in Orlando, a way into the industry off the stage.",
-      "url": "https://dance.one/careers/",
-      "verified": true
+     "label": "Go 2 Talent submissions",
+     "url": "https://www.go2talentagency.com/contact"
     }
-  ],
-  "boards": [
-    {"name": "Disney Auditions", "url": "https://www.disneycareers.com/auditions", "what": "Every Disney park, cruise and live entertainment audition, filterable by park and city."},
-    {"name": "Universal Orlando Auditions", "url": "https://auditions.universalorlando.com/", "what": "Universal's own casting calls for parades, Halloween Horror Nights and park shows."},
-    {"name": "Orlando Ballet auditions", "url": "https://orlandoballet.org/auditions/", "what": "Company, second company and trainee audition info for Orlando's professional ballet company."},
-    {"name": "Playbill Jobs", "url": "https://playbill.com/jobs", "what": "Theatre job board with a Performer category that includes dancer calls."},
-    {"name": "Backstage", "url": "https://www.backstage.com/", "what": "The biggest casting call site for stage, screen, cruise and theme park work."},
-    {"name": "Dance/USA Jobs and Auditions", "url": "https://www.danceusa.org/jobsandauditions", "what": "Dance company jobs, auditions and fellowships from the national dance service organization."},
-    {"name": "Dance/NYC Listings", "url": "https://www.dance.nyc/for-artists/listings/", "what": "Auditions, jobs, internships and training listings, mostly New York."},
-    {"name": "Dancers' Group Opportunities", "url": "https://dancersgroup.org/opportunities/", "what": "Bay Area jobs, auditions and calls for artists."},
-    {"name": "Gibney Opportunities", "url": "https://gibneydance.org/who-we-are/opportunities/", "what": "Jobs and opportunities at one of New York's biggest dance centers."},
-    {"name": "Actors' Equity: Join", "url": "https://www.actorsequity.org/join", "what": "How to join the stage actors' and dancers' union (the old EMC program was replaced by Open Access in 2023)."},
-    {"name": "Royal Caribbean casting profile", "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/", "what": "Upcoming cruise auditions plus an online profile you can submit if you cannot attend."},
-    {"name": "Cirque du Soleil Casting", "url": "https://casting.cirquedusoleil.com/faq", "what": "How to apply online to Cirque with a video demo once you are 18."},
-    {"name": "NDEO Jobs Board", "url": "https://www.ndeo.org/Connect/Jobs-Board", "what": "Dance education jobs from K-12 to college, plus student memberships."},
-    {"name": "Career Transition For Dancers (Entertainment Community Fund)", "url": "https://entertainmentcommunity.org/services-and-programs/career-transition-dancers", "what": "Free career counseling, workshops and scholarships for dancers planning their next career."},
-    {"name": "ADTA: Become a dance/movement therapist", "url": "https://www.adta.org/become-a-dance-movement-therapist", "what": "Official steps to become a dance/movement therapist."},
-    {"name": "BLS: Dancers and Choreographers", "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm", "what": "Government pay, outlook and training data for dancers and choreographers."},
-    {"name": "Dance Spirit: How to audition for an NBA dance team", "url": "https://dancespirit.com/nba-dance-team-how-to-audition/", "what": "Career article on what pro sports dance auditions look for."},
-    {"name": "Dance Magazine: How I Got the Job (Graham dancers)", "url": "https://dancemagazine.com/how-i-got-the-job-graham-dancers/", "what": "Real dancers explaining how they landed company contracts."}
-  ]
+   ]
+  },
+  {
+   "id": "broadway",
+   "title": "Broadway and national tours (musical theatre)",
+   "what": "You dance in the ensemble of a musical on Broadway or on a touring production, eight shows a week.",
+   "how_in": "Open calls and appointments listed on Playbill, Backstage and Actors' Equity; non-union tours are a common first step before joining Equity.",
+   "training": "Jazz, ballet, tap and contemporary, plus singing. Many come from BFA musical theatre or dance programs, but booking the job is what counts.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "Playbill job board (Performer category)",
+     "url": "https://playbill.com/jobs"
+    },
+    {
+     "label": "Actors' Equity: how to join",
+     "url": "https://www.actorsequity.org/join"
+    }
+   ]
+  },
+  {
+   "id": "theme-park",
+   "title": "Theme park performer",
+   "what": "You perform in parades, stage shows and seasonal events at parks like Walt Disney World, Universal Orlando and SeaWorld.",
+   "how_in": "Each park posts its own auditions online; Orlando has more of these than almost anywhere, and seasonal shows (Halloween, holiday) are a common first booking.",
+   "training": "Versatile jazz, hip hop and musical theatre dance, quick pickup, stamina for outdoor heat. No degree needed.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "Disney Auditions",
+     "url": "https://www.disneycareers.com/auditions"
+    },
+    {
+     "label": "Universal Orlando Auditions",
+     "url": "https://auditions.universalorlando.com/"
+    }
+   ]
+  },
+  {
+   "id": "cruise",
+   "title": "Cruise ship performer",
+   "what": "You live on a ship for a contract of several months and dance in the production shows.",
+   "how_in": "Cruise lines hold open calls in many cities (including Orlando) and some take online submissions through a casting profile.",
+   "training": "Ballet, jazz, contemporary and hip hop, partnering and lifts; singing helps a lot. No degree needed. Most lines require 18 or older to be hired, some 20 or 21.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "Royal Caribbean Productions upcoming auditions",
+     "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/"
+    },
+    {
+     "label": "Carnival Entertainment auditions",
+     "url": "https://www.carnivalentertainment.com/auditions"
+    }
+   ]
+  },
+  {
+   "id": "cirque-specialty",
+   "title": "Cirque and specialty shows",
+   "what": "You dance in large-scale acrobatic or resident shows, often in Las Vegas or on tour.",
+   "how_in": "Apply online through the casting site with a video demo; Cirque keeps applicants on file and calls them for specific roles.",
+   "training": "Strong technique in one or more styles; acrobatics, tumbling or partnering are a big plus. Cirque requires applicants to be at least 18.",
+   "pay": "$24.80 an hour (BLS median for all dancers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "Cirque du Soleil casting FAQ",
+     "url": "https://casting.cirquedusoleil.com/faq"
+    }
+   ]
+  },
+  {
+   "id": "choreographer",
+   "title": "Choreographer (stage, concert, commercial)",
+   "what": "You create the movement for companies, shows, artists, videos or theme park productions.",
+   "how_in": "Almost everyone starts as a dancer, then builds a body of their own work: student pieces, showcases, festivals, assisting other choreographers.",
+   "training": "Dance experience plus composition classes. BLS says some employers prefer a bachelor's degree in dance or a related field.",
+   "pay": "$26.59 an hour (BLS median for choreographers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "BLS: Dancers and Choreographers",
+     "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"
+    }
+   ]
+  },
+  {
+   "id": "competition-choreographer",
+   "title": "Competition and studio choreographer",
+   "what": "You set solos, duets and group pieces for studios that compete, usually as a freelancer traveling between studios.",
+   "how_in": "Word of mouth: dancers with strong competition results and their own choreography get asked by studio owners, often starting with solos for younger dancers.",
+   "training": "Competition experience and a portfolio of pieces that placed. No degree required.",
+   "pay": "$26.59 an hour (BLS median for choreographers, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "links": [
+    {
+     "label": "BLS: Dancers and Choreographers",
+     "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm"
+    }
+   ]
+  },
+  {
+   "id": "studio-teacher-owner",
+   "title": "Dance teacher and studio owner",
+   "what": "You teach classes at a private studio, and later maybe run your own.",
+   "how_in": "Most start by assisting classes as teens (like you already do), then get their own classes; owning a studio means running a small business on top of teaching.",
+   "training": "Teaching experience and technique in the styles you teach. No license required for private studios. Business skills matter for owners.",
+   "pay": null,
+   "pay_source": null,
+   "links": [
+    {
+     "label": "NDEO jobs board",
+     "url": "https://www.ndeo.org/Connect/Jobs-Board"
+    }
+   ]
+  },
+  {
+   "id": "convention-faculty",
+   "title": "Convention faculty and assistant",
+   "what": "You travel with a dance convention on weekends, assisting a teacher onstage or teaching your own classes.",
+   "how_in": "Conventions pick from dancers they already know: scholarship winners and VIPs, then assistants, then faculty.",
+   "training": "A strong competition and convention track record and a teacher who vouches for you.",
+   "pay": null,
+   "pay_source": null,
+   "links": [
+    {
+     "label": "JUMP scholarship and VIP info",
+     "url": "https://jumptour.com/scholarship-info/"
+    },
+    {
+     "label": "DanceOne careers",
+     "url": "https://dance.one/careers/"
+    }
+   ]
+  },
+  {
+   "id": "k12-educator",
+   "title": "K-12 dance teacher (certified) or college dance professor",
+   "what": "You teach dance in a public or private school, or in a college dance department.",
+   "how_in": "Earn a bachelor's (often in dance education), complete student teaching and pass your state's teaching exams; college teaching usually needs an MFA plus a professional career.",
+   "training": "Bachelor's degree and a state teaching certificate for public schools; an MFA is the usual degree for college faculty.",
+   "pay": "High school teachers: $72,040 a year (BLS median, May 2025). College art, drama and music teachers: $78,620 a year (BLS, May 2025).",
+   "pay_source": "https://www.bls.gov/ooh/education-training-and-library/high-school-teachers.htm",
+   "links": [
+    {
+     "label": "BLS: High School Teachers",
+     "url": "https://www.bls.gov/ooh/education-training-and-library/high-school-teachers.htm"
+    },
+    {
+     "label": "BLS: Postsecondary Teachers",
+     "url": "https://www.bls.gov/ooh/education-training-and-library/postsecondary-teachers.htm"
+    },
+    {
+     "label": "NDEO K-12 dance education careers",
+     "url": "https://www.ndeo.org/Learn/K-12-Dance-Education-Careers"
+    }
+   ]
+  },
+  {
+   "id": "dance-movement-therapy",
+   "title": "Dance/movement therapist",
+   "what": "You use movement as therapy to help people with mental, emotional and physical health.",
+   "how_in": "A master's from an ADTA-approved program (or ADTA's alternate route), then the R-DMT credential, then the advanced BC-DMT.",
+   "training": "Bachelor's (dance and psychology are good prep), then a required master's degree.",
+   "pay": null,
+   "pay_source": null,
+   "links": [
+    {
+     "label": "ADTA: Become a dance/movement therapist",
+     "url": "https://www.adta.org/become-a-dance-movement-therapist"
+    }
+   ]
+  },
+  {
+   "id": "physical-therapy",
+   "title": "Physical therapist / dance medicine",
+   "what": "You treat injuries and keep dancers and athletes moving; some PTs specialize in dancers.",
+   "how_in": "Bachelor's degree with science prerequisites, then a Doctor of Physical Therapy (DPT) program and a state license.",
+   "training": "DPT (doctoral) degree and a license in every state.",
+   "pay": "$102,760 a year (BLS median, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/healthcare/physical-therapists.htm",
+   "links": [
+    {
+     "label": "BLS: Physical Therapists",
+     "url": "https://www.bls.gov/ooh/healthcare/physical-therapists.htm"
+    }
+   ]
+  },
+  {
+   "id": "arts-admin",
+   "title": "Arts administration",
+   "what": "You run the business side of dance: company management, marketing, development, education programs, booking.",
+   "how_in": "Internships and entry-level jobs at companies and arts organizations; many former dancers move into these roles.",
+   "training": "Bachelor's degree is common; some get an MA in arts administration later.",
+   "pay": null,
+   "pay_source": null,
+   "links": [
+    {
+     "label": "Dance/USA jobs and auditions",
+     "url": "https://www.danceusa.org/jobsandauditions"
+    },
+    {
+     "label": "Dance/NYC listings",
+     "url": "https://www.dance.nyc/for-artists/listings/"
+    }
+   ]
+  },
+  {
+   "id": "content-creator",
+   "title": "Film, TV and social content creator",
+   "what": "You build an audience with your own dance videos and choreography online, which can lead to brand deals, classes and bookings.",
+   "how_in": "Post consistently, find your style, collaborate with other creators; there is no audition, just the work.",
+   "training": "Filming and editing skills on top of dance. No degree needed.",
+   "pay": null,
+   "pay_source": null,
+   "links": []
+  },
+  {
+   "id": "fitness",
+   "title": "Fitness instructor (barre, Pilates, dance fitness)",
+   "what": "You teach group fitness or private sessions, a common side job and second career for dancers.",
+   "how_in": "Get certified in a method, then teach at studios or gyms; many dancers start this while still performing.",
+   "training": "High school diploma plus certification; BLS says most instructors hold a certification and need CPR/first aid.",
+   "pay": "$47,160 a year, or $22.67 an hour (BLS median, May 2025)",
+   "pay_source": "https://www.bls.gov/ooh/personal-care-and-service/fitness-trainers-and-instructors.htm",
+   "links": [
+    {
+     "label": "BLS: Fitness Trainers and Instructors",
+     "url": "https://www.bls.gov/ooh/personal-care-and-service/fitness-trainers-and-instructors.htm"
+    },
+    {
+     "label": "Pilates Method Alliance",
+     "url": "https://www.pilatesmethodalliance.org/"
+    }
+   ]
+  }
+ ],
+ "employers": [
+  {
+   "id": "disney-wdw",
+   "name": "Disney Auditions (Walt Disney World, Disney Live Entertainment)",
+   "type": "theme-park",
+   "location": "Orlando, FL (also Disneyland and international parks)",
+   "min_age": "Not stated on the main auditions page; each posting sets its own. News coverage has reported 16 for some Walt Disney World character roles, so check the posting.",
+   "auditions": "Auditions are posted on the Disney Auditions page with a filter by park and city; you need a Disney Auditions profile to sign up.",
+   "why_john": "The biggest dance employer in your backyard, and it casts all year.",
+   "url": "https://www.disneycareers.com/auditions",
+   "verified": true
+  },
+  {
+   "id": "disney-cruise",
+   "name": "Disney Cruise Line",
+   "type": "cruise",
+   "location": "Auditions listed by city on Disney Auditions",
+   "min_age": "Past mainstage dancer calls (2023, posted on Dance/NYC) said performers must be 18 or older.",
+   "auditions": "Listed on the same Disney Auditions page; past calls were in person only with a Disney Auditions profile and appointment.",
+   "why_john": "Mainstage shows are musical-theatre style, a fit for your jazz and contemporary.",
+   "url": "https://www.disneycareers.com/auditions",
+   "verified": false
+  },
+  {
+   "id": "universal-orlando",
+   "name": "Universal Orlando Resort Entertainment",
+   "type": "theme-park",
+   "location": "Orlando, FL",
+   "min_age": "The 2026 holiday parade call (reported by WDWNT) required 18 or older.",
+   "auditions": "Calls are posted on Universal's audition site for parades, Halloween Horror Nights and Epic Universe shows, usually with a video submission first.",
+   "why_john": "Seasonal shows like the holiday parade are a classic first professional booking in Orlando.",
+   "url": "https://auditions.universalorlando.com/",
+   "verified": false
+  },
+  {
+   "id": "seaworld-busch",
+   "name": "SeaWorld Orlando and Busch Gardens Tampa Bay (United Parks)",
+   "type": "theme-park",
+   "location": "Orlando and Tampa, FL",
+   "min_age": "A 2026 seasonal SeaWorld Orlando dancer posting (third-party job board) said 18 or older.",
+   "auditions": "Seasonal live auditions (summer shows, Christmas shows) are posted under the Entertainment team on the United Parks careers site.",
+   "why_john": "Past calls asked for jazz, hip hop and jazz fusion, which is right in your lane.",
+   "url": "https://careers.seaworldparks.com/Home/Sites/All",
+   "verified": false
+  },
+  {
+   "id": "royal-caribbean",
+   "name": "Royal Caribbean Productions",
+   "type": "cruise",
+   "location": "Auditions worldwide, including Orlando",
+   "min_age": "\"You must be 18 years of age or older to be hired.\" An Orlando call held at Orlando Ballet listed dancers as 18+.",
+   "auditions": "Auditions year round in over 60 cities; if you cannot attend, you can create a casting profile and submit online.",
+   "why_john": "They have held auditions right here at Orlando Ballet.",
+   "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/",
+   "verified": true
+  },
+  {
+   "id": "carnival",
+   "name": "Carnival Entertainment",
+   "type": "cruise",
+   "location": "Auditions worldwide, including Orlando (Studio K, 2100 Orinoco Dr)",
+   "min_age": "Dancers Who Sing and Singers Who Dance: \"at least 20 years old.\"",
+   "auditions": "Pre-registration open calls listed on the auditions page; an Orlando call for Dancers Who Sing was held October 13, 2026.",
+   "why_john": "They audition in Orlando, but you would need to be 20, so this is a later target.",
+   "url": "https://www.carnivalentertainment.com/auditions",
+   "verified": true
+  },
+  {
+   "id": "nclh",
+   "name": "NCLH Creative Studios (Norwegian Cruise Line Holdings)",
+   "type": "cruise",
+   "location": "Riverview, FL studio; auditions worldwide",
+   "min_age": "Not stated on the auditions page; a 2025 Chicago call on Playbill said you must be 18 to apply.",
+   "auditions": "Runs online general submissions year round plus in-person dancer calls in rotating cities.",
+   "why_john": "Online submissions mean you can apply from Orlando once you are 18.",
+   "url": "https://www.nclhcreativestudios.com/auditions.html",
+   "verified": true
+  },
+  {
+   "id": "virgin-voyages",
+   "name": "Virgin Voyages",
+   "type": "cruise",
+   "location": "Caribbean and Mediterranean sailings",
+   "min_age": "Not stated on the careers page; a 2023 dancer call said 21+ to work onboard.",
+   "auditions": "Entertainment roles are posted on the shipboard careers page; past dancer calls asked for contemporary, commercial, hip hop and breaking.",
+   "why_john": "Their shows lean contemporary and commercial instead of classic revue.",
+   "url": "https://www.virginvoyages.com/careers/shipboard",
+   "verified": false
+  },
+  {
+   "id": "cirque",
+   "name": "Cirque du Soleil",
+   "type": "other",
+   "location": "Las Vegas, touring, worldwide",
+   "min_age": "\"Applicants must be at least 18 years old.\"",
+   "auditions": "Apply online to a specific posting with a CV, headshot, full-body photo and video demo (12 minutes or less).",
+   "why_john": "Dance categories include contemporary, hip hop, tap and jazz, so you can build a file once you turn 18.",
+   "url": "https://casting.cirquedusoleil.com/faq",
+   "verified": true
+  },
+  {
+   "id": "radio-city",
+   "name": "Radio City Christmas Spectacular (Rockettes and ensemble)",
+   "type": "other",
+   "location": "New York, NY",
+   "min_age": "\"All performers must be 18 years of age by the first day of rehearsals to be considered for casting.\"",
+   "auditions": "Open call once a year in spring at Radio City Music Hall with advance registration; 2026 registration is closed.",
+   "why_john": "The Rockettes are a women's line; the page does not say whether men can audition for the ensemble, so ask before you plan around it.",
+   "url": "https://www.rockettes.com/?p=16696",
+   "verified": false
+  },
+  {
+   "id": "networks",
+   "name": "NETworks (Broadway national tours)",
+   "type": "tour",
+   "location": "National tours",
+   "min_age": null,
+   "auditions": "The jobs page lists crew, music and tour management roles; performer calls for tours show up on boards like Playbill and Backstage.",
+   "why_john": "Tours are how most dancers first work in Broadway shows outside New York.",
+   "url": "https://www.networkstours.com/jobs/",
+   "verified": true
+  },
+  {
+   "id": "orlando-magic-407",
+   "name": "Orlando Magic: The 407",
+   "type": "sports",
+   "location": "Orlando, FL",
+   "min_age": null,
+   "auditions": "Co-ed hip hop crew launched in 2019 to replace the Magic Dancers, cast through an open call announced by the team; no current call found.",
+   "why_john": "A home-team co-ed hip hop crew that takes men.",
+   "url": "https://www.nba.com/magic/entertainment",
+   "verified": false
+  },
+  {
+   "id": "memphis-hustle",
+   "name": "Memphis Hustle Hype Crew (NBA G League)",
+   "type": "sports",
+   "location": "Memphis area (Landers Center)",
+   "min_age": "\"performers ages 18 and up of all backgrounds\"",
+   "auditions": "Yearly open tryouts in September with a free clinic the week before.",
+   "why_john": "A confirmed co-ed hip hop team, a model for what sports entertainment jobs for men look like.",
+   "url": "https://memphis.gleague.nba.com/news/memphis-hustle-to-hold-auditions-for-2026-27-hustle-hype-crew",
+   "verified": true
+  },
+  {
+   "id": "orlando-ballet",
+   "name": "Orlando Ballet (company)",
+   "type": "company",
+   "location": "Orlando, FL",
+   "min_age": null,
+   "auditions": "Send a video and materials for review, then register for an in-person audition through Dance Apply; right now all company and second company spots are filled. No audition fee.",
+   "why_john": "Your hometown professional company, and it does contemporary repertory too.",
+   "url": "https://orlandoballet.org/company-auditions/",
+   "verified": true
+  },
+  {
+   "id": "orlando-ballet-ii",
+   "name": "Orlando Ballet II and Trainee programs",
+   "type": "second-company",
+   "location": "Orlando, FL",
+   "min_age": "OBII and Trainee: \"Age 16-21 by Audition only\"",
+   "auditions": "In-person auditions in May and August before each school year, or a video audition until December 31.",
+   "why_john": "You are in the age window right now, and it is in Orlando; it is ballet-heavy, so your classical has to be strong.",
+   "url": "https://orlandoballet.org/second-company/",
+   "verified": true
+  },
+  {
+   "id": "dance-theatre-of-orlando",
+   "name": "Dance Theatre of Orlando",
+   "type": "company",
+   "location": "Orlando, FL (Marshall Ellis Theatre, 1300 La Quinta Dr)",
+   "min_age": null,
+   "auditions": "Small contemporary company (formerly ME Dance) with company members, apprentices and trainees per past show listings; no public audition page found, so contact them directly.",
+   "why_john": "A local contemporary company where an apprentice or trainee spot is realistic.",
+   "url": "https://marshallellisdanceschool.com/dance-theatre-of-orlando",
+   "verified": false
+  },
+  {
+   "id": "central-florida-ballet",
+   "name": "Central Florida Ballet",
+   "type": "other",
+   "location": "Orlando, FL",
+   "min_age": "Studio Company: ages 7 through 17. Nutcracker: freelance professionals and students ages 5 and up (per its Nutcracker audition page).",
+   "auditions": "Studio Company and Nutcracker auditions have been held in August.",
+   "why_john": "Mostly a training program, but Nutcracker casting takes freelancers, which is stage time close to home.",
+   "url": "https://centralfloridaballet.com/studio-company-cfb",
+   "verified": false
+  },
+  {
+   "id": "ailey-ii",
+   "name": "Ailey II",
+   "type": "second-company",
+   "location": "New York, NY",
+   "min_age": null,
+   "auditions": "Invitation only, mainly from students in The Ailey School's full-time programs.",
+   "why_john": "The way in is The Ailey School first, see the next entry.",
+   "url": "https://ailey.org/careers/company-auditions",
+   "verified": false
+  },
+  {
+   "id": "ailey-school",
+   "name": "The Ailey School Professional Division (Certificate Program)",
+   "type": "other",
+   "location": "New York, NY",
+   "min_age": "Certificate Program: ages 17 to 23 who have completed secondary school.",
+   "auditions": "Audition tour runs January to February; 2027 dates are announced in October. Video auditions are not currently accepted.",
+   "why_john": "You fit the age range and could audition this winter for fall 2027, right after graduation.",
+   "url": "https://ailey.org/training/audition-tour",
+   "verified": true
+  },
+  {
+   "id": "philadanco-d2",
+   "name": "Philadanco D/2",
+   "type": "second-company",
+   "location": "Philadelphia, PA",
+   "min_age": "Ages 16-23",
+   "auditions": "Yearly apprentice company audition in January ($15 cash fee in 2026).",
+   "why_john": "You can audition at 17, and it is a real performing second company (about 25 shows a year).",
+   "url": "https://philadanco.org/event/d-2-apprentice-company-auditions/",
+   "verified": true
+  },
+  {
+   "id": "dbdt-encore",
+   "name": "Dallas Black Dance Theatre: Encore!",
+   "type": "second-company",
+   "location": "Dallas, TX",
+   "min_age": null,
+   "auditions": "Applications (headshot, resume, dance photos, reel) due in February, then invitation-only in-person auditions in March.",
+   "why_john": "Seeks early career dancers with modern and classical training.",
+   "url": "https://www.dbdt.com/auditions",
+   "verified": true
+  },
+  {
+   "id": "giordano-ii",
+   "name": "Giordano II (Giordano Dance Chicago)",
+   "type": "second-company",
+   "location": "Chicago, IL",
+   "min_age": "Not on the current page; a 2018 call required age 22, so check.",
+   "auditions": "Yearly audition (the 2025 one was in NYC in February) with reel, headshot and resume; positions are paid.",
+   "why_john": "America's original jazz company, a strong fit for your jazz.",
+   "url": "https://giordanodance.org/audition",
+   "verified": false
+  },
+  {
+   "id": "hubbard-street",
+   "name": "Hubbard Street Dance Chicago",
+   "type": "company",
+   "location": "Chicago, IL",
+   "min_age": "Summer intensives: 13-17 and 18-25 tracks.",
+   "auditions": "Hubbard Street 2 was suspended in December 2016; the training path now runs through summer intensive auditions held each winter.",
+   "why_john": "A top contemporary company; the summer intensive is the way to get seen.",
+   "url": "https://www.hubbardstreetdance.com/summer-audition",
+   "verified": false
+  },
+  {
+   "id": "graham-2",
+   "name": "Graham 2 (Martha Graham)",
+   "type": "second-company",
+   "location": "New York, NY",
+   "min_age": null,
+   "auditions": "Pre-professional company drawn from advanced Martha Graham School students; admission by audition or faculty recommendation.",
+   "why_john": "A modern-dance second company if you go the NYC training route.",
+   "url": "https://marthagraham.edu/graham2/",
+   "verified": false
+  },
+  {
+   "id": "complexions",
+   "name": "Complexions Contemporary Ballet (Complexions Academy)",
+   "type": "second-company",
+   "location": "New York, NY",
+   "min_age": null,
+   "auditions": "All academy programs need an in-person or video audition through DanceApply; company members have come up through the intensives, some as apprentices.",
+   "why_john": "Contemporary ballet with big partnering, and the academy is the pipeline.",
+   "url": "https://www.complexionsacademy.com/audition",
+   "verified": true
+  },
+  {
+   "id": "msa",
+   "name": "MSA Agency",
+   "type": "agency",
+   "location": "Los Angeles and New York",
+   "min_age": null,
+   "auditions": "No open calls listed; submit through the Talent Seeking Representation form with headshot, resume and videos.",
+   "why_john": "A major dance agency; you can submit from anywhere.",
+   "url": "https://www.msaagency.com/dance-division/",
+   "verified": true
+  },
+  {
+   "id": "go2talent",
+   "name": "Go 2 Talent Agency",
+   "type": "agency",
+   "location": "Los Angeles",
+   "min_age": null,
+   "auditions": "Online submission form; the site says no auditions or class observations are scheduled right now.",
+   "why_john": "A boutique agency that only reps dancers and choreographers.",
+   "url": "https://www.go2talentagency.com/contact",
+   "verified": true
+  },
+  {
+   "id": "bloc",
+   "name": "Bloc Agency",
+   "type": "agency",
+   "location": "Los Angeles, New York, Atlanta, Toronto, Vancouver, London",
+   "min_age": null,
+   "auditions": "No submission policy found on the site; check each city office page.",
+   "why_john": null,
+   "url": "https://www.blocagency.com/",
+   "verified": false
+  },
+  {
+   "id": "clear-talent",
+   "name": "Clear Talent Group",
+   "type": "agency",
+   "location": "Los Angeles and New York",
+   "min_age": null,
+   "auditions": "No submission policy found on the site.",
+   "why_john": null,
+   "url": "https://www.cleartalentgroup.com/",
+   "verified": false
+  },
+  {
+   "id": "cesd",
+   "name": "CESD Talent",
+   "type": "agency",
+   "location": "Los Angeles and New York",
+   "min_age": null,
+   "auditions": "Fill out the online form for on-camera and dance representation; the roster includes teens.",
+   "why_john": "Has a teens category, so it is one agency that works with dancers your age.",
+   "url": "https://cesdtalent.com/",
+   "verified": true
+  },
+  {
+   "id": "jump",
+   "name": "JUMP Dance Convention (DanceOne)",
+   "type": "convention",
+   "location": "Touring; The Dance Awards 2027 in Orlando (June 26 to July 3) and Las Vegas",
+   "min_age": "VIP Senior division: 16-19 (age as of January 1, 2027)",
+   "auditions": "VIP scholarship audition at each regional workshop; winners and runners-up qualify for Best Dancer at The Dance Awards.",
+   "why_john": "VIP is your road to The Dance Awards, and the Orlando finals are local.",
+   "url": "https://jumptour.com/scholarship-info/",
+   "verified": true
+  },
+  {
+   "id": "radix",
+   "name": "RADIX Dance Convention",
+   "type": "convention",
+   "location": "Touring",
+   "min_age": "Protégé Senior: 16-19; dancers 20 and older are not eligible for scholarships",
+   "auditions": "Protégé scholarship audition class at each full workshop.",
+   "why_john": "Another scholarship ladder that convention faculty watch.",
+   "url": "https://radixdance.com/protege-info/",
+   "verified": true
+  },
+  {
+   "id": "nycda",
+   "name": "New York City Dance Alliance (NYCDA)",
+   "type": "convention",
+   "location": "Touring; Nationals in NYC",
+   "min_age": null,
+   "auditions": "Outstanding Dancer programs at regionals and nationals, plus a College Scholarship Audition through the NYCDA Foundation.",
+   "why_john": "The College Scholarship Audition can turn into money for a BFA.",
+   "url": "https://www.nycdance.com/foundation/college-scholarship-audition",
+   "verified": true
+  },
+  {
+   "id": "danceone-careers",
+   "name": "DanceOne (JUMP, NUVO, 24 Seven, The Dance Awards) company jobs",
+   "type": "other",
+   "location": "Orlando, FL and remote",
+   "min_age": null,
+   "auditions": "Staff jobs posted on the careers page; current openings include Orlando tech and warehouse roles and a remote junior social media role.",
+   "why_john": "The company behind the conventions you compete at has jobs in Orlando, a way into the industry off the stage.",
+   "url": "https://dance.one/careers/",
+   "verified": true
+  }
+ ],
+ "boards": [
+  {
+   "name": "Disney Auditions",
+   "url": "https://www.disneycareers.com/auditions",
+   "what": "Every Disney park, cruise and live entertainment audition, filterable by park and city."
+  },
+  {
+   "name": "Universal Orlando Auditions",
+   "url": "https://auditions.universalorlando.com/",
+   "what": "Universal's own casting calls for parades, Halloween Horror Nights and park shows."
+  },
+  {
+   "name": "Orlando Ballet auditions",
+   "url": "https://orlandoballet.org/auditions/",
+   "what": "Company, second company and trainee audition info for Orlando's professional ballet company."
+  },
+  {
+   "name": "Playbill Jobs",
+   "url": "https://playbill.com/jobs",
+   "what": "Theatre job board with a Performer category that includes dancer calls."
+  },
+  {
+   "name": "Backstage",
+   "url": "https://www.backstage.com/",
+   "what": "The biggest casting call site for stage, screen, cruise and theme park work."
+  },
+  {
+   "name": "Dance/USA Jobs and Auditions",
+   "url": "https://www.danceusa.org/jobsandauditions",
+   "what": "Dance company jobs, auditions and fellowships from the national dance service organization."
+  },
+  {
+   "name": "Dance/NYC Listings",
+   "url": "https://www.dance.nyc/for-artists/listings/",
+   "what": "Auditions, jobs, internships and training listings, mostly New York."
+  },
+  {
+   "name": "Dancers' Group Opportunities",
+   "url": "https://dancersgroup.org/opportunities/",
+   "what": "Bay Area jobs, auditions and calls for artists."
+  },
+  {
+   "name": "Gibney Opportunities",
+   "url": "https://gibneydance.org/who-we-are/opportunities/",
+   "what": "Jobs and opportunities at one of New York's biggest dance centers."
+  },
+  {
+   "name": "Actors' Equity: Join",
+   "url": "https://www.actorsequity.org/join",
+   "what": "How to join the stage actors' and dancers' union (the old EMC program was replaced by Open Access in 2023)."
+  },
+  {
+   "name": "Royal Caribbean casting profile",
+   "url": "https://royalcaribbeanentertainment.com/productions/upcoming-auditions/",
+   "what": "Upcoming cruise auditions plus an online profile you can submit if you cannot attend."
+  },
+  {
+   "name": "Cirque du Soleil Casting",
+   "url": "https://casting.cirquedusoleil.com/faq",
+   "what": "How to apply online to Cirque with a video demo once you are 18."
+  },
+  {
+   "name": "NDEO Jobs Board",
+   "url": "https://www.ndeo.org/Connect/Jobs-Board",
+   "what": "Dance education jobs from K-12 to college, plus student memberships."
+  },
+  {
+   "name": "Career Transition For Dancers (Entertainment Community Fund)",
+   "url": "https://entertainmentcommunity.org/services-and-programs/career-transition-dancers",
+   "what": "Free career counseling, workshops and scholarships for dancers planning their next career."
+  },
+  {
+   "name": "ADTA: Become a dance/movement therapist",
+   "url": "https://www.adta.org/become-a-dance-movement-therapist",
+   "what": "Official steps to become a dance/movement therapist."
+  },
+  {
+   "name": "BLS: Dancers and Choreographers",
+   "url": "https://www.bls.gov/ooh/entertainment-and-sports/dancers-and-choreographers.htm",
+   "what": "Government pay, outlook and training data for dancers and choreographers."
+  },
+  {
+   "name": "Dance Spirit: How to audition for an NBA dance team",
+   "url": "https://dancespirit.com/nba-dance-team-how-to-audition/",
+   "what": "Career article on what pro sports dance auditions look for."
+  },
+  {
+   "name": "Dance Magazine: How I Got the Job (Graham dancers)",
+   "url": "https://dancemagazine.com/how-i-got-the-job-graham-dancers/",
+   "what": "Real dancers explaining how they landed company contracts."
+  }
+ ]
 }

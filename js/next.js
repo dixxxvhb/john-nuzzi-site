@@ -48,16 +48,20 @@
   const TYPES = { scholarship: 'Scholarships', convention: 'Conventions', competition: 'Competitions', intensive: 'Summer intensives', 'gap-year': 'Gap year', 'college-audition': 'College auditions', job: 'Jobs' };
   const ETYPES = { 'theme-park': 'Theme parks', cruise: 'Cruise lines', company: 'Companies', 'second-company': 'Second companies', tour: 'Tours and Broadway', sports: 'Sports teams', agency: 'Agencies', convention: 'Conventions', other: 'Other' };
   const OTYPES = { cruise: 'Cruise lines', 'theme-park': 'Theme parks', broadway: 'Broadway', tour: 'Touring shows', company: 'Dance companies', theatre: 'Theatres', 'tv-film': 'TV and film', other: 'Other' };
-  const OK = { 'yes-now': ['You can go now', 'hot'], 'at-18': ['Opens when you turn 18', ''], check: ['Age not stated, ask', ''], no: ['Union members only', ''] };
+  const OK = { 'yes-now': ['You can go now', 'hot'], 'at-18': ['Opens when you turn 18', ''], check: ['Age not stated, ask', ''], no: ['Not open to you', ''] };
   const MTYPES = { dance: 'Dance', arts: 'Arts', general: 'General', need: 'Need-based', local: 'Central Florida' };
   const singular = s => s.replace(/ies$/, 'y').replace(/s$/, '');
   const unverified = '<span class="tag check" title="Some details were not posted for this cycle yet">Confirm dates</span>';
   const row = (k, v) => v ? `<dt>${k}</dt><dd>${humanize(v)}</dd>` : '';
 
   // ---------- cards ----------
+  // The Scorecard after-aid average mostly reflects in-state families, so it misleads for
+  // public schools outside Florida, where John pays out-of-state tuition. Hide it there.
+  const outOfStatePublic = c => c && c.tuition_in_state != null && c.tuition_out_of_state != null && c.tuition_in_state !== c.tuition_out_of_state && c.john_tuition === c.tuition_out_of_state;
+  const fairNet = c => c && !outOfStatePublic(c) ? c.net_price : null;
   function costLine(id) {
     const c = COST[id]; if (!c) return '';
-    const t = money$(c.john_tuition), n = money$(c.net_price);
+    const t = money$(c.john_tuition), n = money$(fairNet(c));
     if (!t && !n) return '';
     return `<p class="cost">${t ? `<span><b>${t}</b> tuition a year for you${c.cost_year ? ` (${esc(c.cost_year)})` : ''}</span>` : ''}${n ? `<span><b>${n}</b> average real cost after aid${c.scorecard_url ? ` <a class="link" href="${esc(c.scorecard_url)}" target="_blank" rel="noopener">source</a>` : ''}</span>` : ''}</p>`;
   }
@@ -90,13 +94,13 @@
       <div class="card-top"><div><h3>${esc(m.name)}</h3><p class="sub">${esc([m.org, MTYPES[m.type]].filter(Boolean).join(' · '))}</p></div>${starBtn('m:' + m.id, m.name)}</div>
       ${m.why_john ? `<p class="why">${esc(m.why_john)}</p>` : ''}
       <dl>${row('Amount', m.amount)}${row('Deadline', dl ? fmtLong(dl) : null)}${row('When', m.when)}${row('Who', m.eligibility)}</dl>
-      <div class="foot"><a class="link" href="${esc(m.url)}" target="_blank" rel="noopener">Official page</a><span>${soonPill(dl)} ${m.verified ? '' : unverified}</span></div>
+      <div class="foot"><a class="link" href="${esc(m.url)}" target="_blank" rel="noopener">Official page</a><span>${dl && dl < today ? '<span class="left">Closed this year</span>' : soonPill(dl)} ${m.verified ? '' : unverified}</span></div>
     </article>`;
   }
   function callCard(o) {
     const s = iso(o.date_start), e = iso(o.date_end), dl = iso(o.deadline);
     const when = s ? (e && +e !== +s ? `${fmt(s)} to ${fmtLong(e)}` : fmtLong(s)) : (o.rolling ? 'Rolling, submit any time' : null);
-    const ok = OK[o.john_ok];
+    const ok = o.john_ok === 'check' && o.age_rule ? ['Check the age rule', ''] : OK[o.john_ok];
     return `<article class="card">
       <div class="card-top"><div><h3>${esc(o.title)}</h3><p class="sub">${esc([o.org, o.where].filter(Boolean).join(' · '))}</p></div>${starBtn('o:' + o.id, o.title)}</div>
       ${ok ? `<p><span class="left ${ok[1]}">${ok[0]}</span></p>` : ''}
@@ -151,7 +155,7 @@
   const gOrder = ['florida', 'top-bfa', 'commercial', 'conservatory-gap'];
   const nextDl = c => firstDate((c.prescreen_deadline || '') + ' ' + (c.app_deadline || '')) || 9e15;
   const tuition = c => COST[c.id]?.john_tuition ?? 9e15;
-  const netp = c => COST[c.id]?.net_price ?? 9e15;
+  const netp = c => fairNet(COST[c.id]) ?? 9e15;
   const collegeSorts = { home: { label: 'Florida first', fn: (a, b) => (gOrder.indexOf(a.group) - gOrder.indexOf(b.group)) || (nextDl(a) - nextDl(b)) }, soon: { label: 'Soonest deadline', fn: (a, b) => nextDl(a) - nextDl(b) } };
   if (Object.keys(COST).length) {
     collegeSorts.tuition = { label: 'Lowest tuition for you', fn: (a, b) => tuition(a) - tuition(b) };
@@ -179,19 +183,21 @@
     $('#bf').innerHTML = `<b>Florida Bright Futures.</b> ${esc(costs.bright_futures.summary)} ${costs.bright_futures.url ? `<a class="link" href="${esc(costs.bright_futures.url)}" target="_blank" rel="noopener">Official page</a>` : ''}`;
     $('#bf').hidden = false;
   }
+  // Open deadlines first (soonest), then rolling or undated, then ones already closed this year.
+  const mKey = m => { const d = iso(m.deadline); return !d ? 8e15 : d < today ? 9e15 + +d : +d; };
   if (M.length) {
     filtered({
       data: M, chipsEl: $('#money-types'), labels: MTYPES, key: 'type', qEl: $('#money-q'),
       countEl: $('#money-count'), cardsEl: $('#money-cards'), card: moneyCard, noun: ['scholarship', 'scholarships'],
-      sorts: { soon: { label: 'Soonest deadline', fn: (a, b) => ((iso(a.deadline) || 9e15) - (iso(b.deadline) || 9e15)) } }
+      sorts: { soon: { label: 'Soonest deadline', fn: (a, b) => mKey(a) - mKey(b) } }
     });
   } else { $('#money-count').textContent = 'More scholarships are being researched. The college talent awards are on each college card.'; }
   // Cost table
   const priced = C.filter(c => COST[c.id] && (COST[c.id].john_tuition != null || COST[c.id].net_price != null));
   if (priced.length) {
-    const rows = priced.slice().sort((a, b) => netp(a) - netp(b) || tuition(a) - tuition(b));
-    $('#cost-table').innerHTML = `<div class="ct-head"><span>School</span><span>Tuition for you</span><span>Real cost after aid</span></div>` +
-      rows.map(c => `<div class="ct-row"><span><b>${esc(c.name)}</b><small>${esc(GROUPS[c.group])}</small></span><span>${money$(COST[c.id].john_tuition) || '<i>not posted</i>'}</span><span>${money$(COST[c.id].net_price) || '<i>not posted</i>'}</span></div>`).join('');
+    const rows = priced.slice().sort((a, b) => tuition(a) - tuition(b));
+    $('#cost-table').innerHTML = `<div class="ct-head"><span>School</span><span>Tuition for you</span><span>Avg cost after aid</span></div>` +
+      rows.map(c => { const k = COST[c.id]; return `<div class="ct-row"><span><b>${esc(c.name)}</b><small>${esc(GROUPS[c.group])}${k.room_board ? ` · ${money$(k.room_board)} housing and food` : ''}</small></span><span>${money$(k.john_tuition) || '<i>not posted</i>'}</span><span>${outOfStatePublic(k) ? '<i>out-of-state, ask</i>' : (money$(k.net_price) || '<i>not posted</i>')}</span></div>`; }).join('');
     $('#cost-wrap').hidden = false;
   }
 
@@ -203,7 +209,7 @@
       data: O, chipsEl: $('#call-types'), labels: OTYPES, key: 'category', qEl: $('#call-q'),
       toggleEl: $('#call-now'), toggleTest: (o, on) => !callPast(o) && (!on || o.john_ok === 'yes-now'),
       countEl: $('#call-count'), cardsEl: $('#call-cards'), card: callCard, noun: ['call', 'calls'],
-      sorts: { soon: { label: 'Soonest first', fn: (a, b) => ((callDate(a) || 9e15) - (callDate(b) || 9e15)) } }
+      sorts: { soon: { label: 'Open to you first', fn: (a, b) => ((a.john_ok === 'yes-now' ? 0 : 1) - (b.john_ok === 'yes-now' ? 0 : 1)) || ((callDate(a) || 9e15) - (callDate(b) || 9e15)) } }
     });
   } else { $('#call-count').textContent = 'Live casting calls are being collected right now.'; }
 
