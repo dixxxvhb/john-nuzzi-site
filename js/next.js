@@ -4,10 +4,12 @@
   const $ = s => document.querySelector(s);
   const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   const load = async f => { try { const r = await fetch('data/' + f, { cache: 'no-cache' }); return r.ok ? r.json() : null; } catch (e) { return null; } };
-  const store = {
-    get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
-    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
-  };
+
+  await window.PlanStore.init();
+  const S = window.PlanStore;
+  const isSaved = k => !!S.data.saved[k];
+  const savedKeys = () => Object.keys(S.data.saved);
+  const trackOf = k => S.data.track[k] || {};
 
   const [colleges, auditions, careers, costs, money, prep, callsCruise, callsStage] = await Promise.all(
     ['colleges', 'auditions', 'careers', 'costs', 'money', 'prep', 'calls-cruise', 'calls-stage'].map(n => load(n + '.json')));
@@ -27,20 +29,16 @@
   const humanize = s => esc(s).replace(/(\d{4})-(\d{2})-(\d{2})/g, m => { const d = iso(m); return d ? fmtLong(d) : m; });
 
   // ---------- saved + tracker ----------
-  let saved = new Set(store.get('jn-saved', []));
-  let track = store.get('jn-track', {}); // key -> {status, note}
   const STATUSES = ['Interested', 'Applying', 'Submitted', 'Audition booked', 'Auditioned', 'Got an offer', 'Not for me'];
   const starSvg = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" stroke-linejoin="round"/></svg>';
-  const starBtn = (key, name) => `<button class="star" data-star="${esc(key)}" aria-pressed="${saved.has(key)}" aria-label="Save ${esc(name)}">${starSvg}</button>`;
+  const starBtn = (key, name) => `<button class="star" data-star="${esc(key)}" aria-pressed="${isSaved(key)}" aria-label="Save ${esc(name)}">${starSvg}</button>`;
   function setSaved(k, on) {
-    on ? saved.add(k) : saved.delete(k);
-    store.set('jn-saved', [...saved]);
-    document.querySelectorAll(`[data-star="${CSS.escape(k)}"]`).forEach(x => x.setAttribute('aria-pressed', String(saved.has(k))));
-    renderMine(); renderRoadmap(); renderPrepSchools();
+    S.set(['saved', k], on ? true : null);
+    renderPersonal();
   }
   document.addEventListener('click', e => {
     const b = e.target.closest('[data-star]'); if (!b) return;
-    setSaved(b.dataset.star, !saved.has(b.dataset.star));
+    setSaved(b.dataset.star, !isSaved(b.dataset.star));
   });
 
   // ---------- labels ----------
@@ -282,7 +280,7 @@
   const soonRow = e => {
     const n = daysLeft(e.d);
     return `<li><div class="d">${fmt(e.d)}<small>${e.d.toLocaleDateString('en-US', { weekday: 'short' })}</small></div>
-      <div class="w"><b>${esc(e.name)}${saved.has(e.key) ? ' <span class="mine-dot" title="On your list">On your list</span>' : ''}</b><span>${esc(e.label)}</span></div>
+      <div class="w"><b>${esc(e.name)}${isSaved(e.key) ? ' <span class="mine-dot" title="On your list">On your list</span>' : ''}</b><span>${esc(e.label)}</span></div>
       <span class="left${n <= 7 ? ' hot' : ''}">${leftLabel(n)}</span></li>`;
   };
   function drawSoon() {
@@ -312,7 +310,7 @@
   function renderRoadmap() {
     const box = $('#road'); if (!box) return;
     const months = Object.keys(PHASES);
-    const ofMonth = ym => upcoming.filter(e => `${e.d.getFullYear()}-${String(e.d.getMonth() + 1).padStart(2, '0')}` === ym && (!roadOnlyMine || saved.has(e.key)));
+    const ofMonth = ym => upcoming.filter(e => `${e.d.getFullYear()}-${String(e.d.getMonth() + 1).padStart(2, '0')}` === ym && (!roadOnlyMine || isSaved(e.key)));
     box.innerHTML = months.map(ym => {
       const [y, m] = ym.split('-').map(Number);
       const label = new Date(y, m - 1, 1).toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
@@ -332,9 +330,7 @@
   if (prep) {
     $('#prep-patterns').innerHTML = (prep.patterns || []).map(p => `<li><b>${esc(p.fact)}</b></li>`).join('');
     $('#prep-film').innerHTML = (prep.film_day || []).map((t, i) => `<li><label><input type="checkbox" data-film="${i}"><div><b>${esc(t.tip)}</b><span>${(t.from || []).map(id => esc(C.find(c => c.id === id)?.name || id)).slice(0, 4).join(', ')}${(t.from || []).length > 4 ? ' and more' : ''}</span></div></label></li>`).join('');
-    const filmDone = new Set(store.get('jn-film', []));
-    $('#prep-film').querySelectorAll('input').forEach(i => { i.checked = filmDone.has(i.dataset.film); });
-    $('#prep-film').addEventListener('change', e => { const k = e.target.dataset.film; e.target.checked ? filmDone.add(k) : filmDone.delete(k); store.set('jn-film', [...filmDone]); });
+    $('#prep-film').addEventListener('change', e => { S.set(['film', 'f' + e.target.dataset.film], e.target.checked || null); });
     $('#prep-ready').hidden = false; $('#prep-wait').hidden = true;
   }
   let prepAll = false;
@@ -360,7 +356,7 @@
   }
   function renderPrepSchools() {
     if (!prep) return;
-    const list = C.filter(c => PREP[c.id] && (prepAll || saved.has('c:' + c.id)));
+    const list = C.filter(c => PREP[c.id] && (prepAll || isSaved('c:' + c.id)));
     $('#prep-cards').innerHTML = list.map(prepCard).join('');
     $('#prep-empty').hidden = list.length > 0;
   }
@@ -379,49 +375,100 @@
     ['fafsa', 'FAFSA', 'Free at studentaid.gov. Almost every school on this page uses it for aid. A few private schools also want the CSS Profile.'],
     ['bf', 'Florida Bright Futures', 'Covers tuition at Florida public schools like FSU, UF, USF and Valencia. Ask your counselor about the Florida Financial Aid Application.']
   ];
-  let done = new Set(store.get('jn-kit', []));
-  $('#kit').innerHTML = KIT.map(([id, t, s]) => `<li><label><input type="checkbox" data-kit="${id}" ${done.has(id) ? 'checked' : ''}><div><b>${esc(t)}</b><span>${esc(s)}</span></div></label></li>`).join('');
-  $('#kit').addEventListener('change', e => { const id = e.target.dataset.kit; e.target.checked ? done.add(id) : done.delete(id); store.set('jn-kit', [...done]); });
+  $('#kit').innerHTML = KIT.map(([id, t, s]) => `<li><label><input type="checkbox" data-kit="${id}"><div><b>${esc(t)}</b><span>${esc(s)}</span></div></label></li>`).join('');
+  $('#kit').addEventListener('change', e => { S.set(['kit', e.target.dataset.kit], e.target.checked || null); });
+  function syncChecks() {
+    document.querySelectorAll('[data-kit]').forEach(i => { i.checked = !!S.data.kit[i.dataset.kit]; });
+    document.querySelectorAll('[data-film]').forEach(i => { i.checked = !!S.data.film['f' + i.dataset.film]; });
+  }
 
   // ---------- My list + tracker ----------
+  // ---------- per-pick checklists ----------
+  // Every pick gets its own steps, built from that school's or call's real requirements and dates.
+  const trim = (t, n) => { t = String(t || ''); return t.length > n ? t.slice(0, n - 1).replace(/\s+\S*$/, '') + '...' : t; };
+  function stepsFor(key) {
+    const kind = key.slice(0, 1), id = key.slice(2);
+    const evs = upcoming.filter(e => e.key === key);
+    const find = re => evs.find(e => re.test(e.label));
+    const steps = [];
+    if (kind === 'c') {
+      const c = C.find(x => x.id === id); if (!c) return steps;
+      const p = PREP[id] || {}, v = p.video || {};
+      const vdue = find(/prescreen|video|digital|portfolio|solo/i);
+      const adue = find(/appl|common app|early|regular|supplement|priority|deadline|decision|\bED\b|\bEA\b|apply/i) || evs.find(e => e !== vdue);
+      steps.push({ id: 'apply', t: 'Send the application', due: adue && adue.d });
+      if (c.prescreen === true || v.needed) steps.push({ id: 'video', t: 'Film and upload the video' + (v.length ? ` (${v.length})` : ''), due: vdue && vdue.d });
+      if ((p.photos || []).length) steps.push({ id: 'photos', t: 'Photos: ' + p.photos.join(', ') });
+      if (p.resume) steps.push({ id: 'resume', t: 'Dance resume' });
+      if (p.essay) steps.push({ id: 'essay', t: 'Essay: ' + trim(p.essay, 90) });
+      if (p.recs) steps.push({ id: 'recs', t: /^\d+$/.test(String(p.recs)) ? `${p.recs} recommendation letter${+p.recs === 1 ? '' : 's'}` : 'Recommendation letters: ' + trim(p.recs, 60) });
+      if (p.fee) steps.push({ id: 'fee', t: 'Pay the fee: ' + trim(p.fee, 60) });
+      steps.push({ id: 'audition', t: 'Book and do the audition' });
+      steps.push({ id: 'aid', t: 'Aid forms: FAFSA, plus the CSS Profile if they ask' });
+    } else if (kind === 'a' || kind === 'o') {
+      const x = kind === 'a' ? A.find(y => y.id === id) : O.find(y => y.id === id); if (!x) return steps;
+      steps.push({ id: 'register', t: kind === 'o' && x.format === 'video submission' ? 'Send the submission' : 'Register or sign up', due: iso(x.deadline) || null });
+      steps.push({ id: 'ready', t: x.bring ? 'Get ready: ' + trim(x.bring, 90) : 'Get your materials ready' });
+      if (iso(x.date_start)) steps.push({ id: 'go', t: 'Go and dance', due: iso(x.date_start) });
+    } else if (kind === 'm') {
+      const m = M.find(y => y.id === id); if (!m) return steps;
+      steps.push({ id: 'docs', t: 'Gather what they ask for' });
+      steps.push({ id: 'apply', t: 'Apply', due: iso(m.deadline) });
+    } else if (kind === 'e') {
+      steps.push({ id: 'profile', t: 'Make a casting profile or send a reel' });
+      steps.push({ id: 'watch', t: 'Check their audition page for new calls' });
+    }
+    return steps;
+  }
+  const stepDone = (k, sid) => !!(S.data.steps[k] || {})[sid];
+  function stepsHtml(k) {
+    const steps = stepsFor(k); if (!steps.length) return '';
+    const left = steps.filter(s => !stepDone(k, s.id)).length;
+    return `<div class="steps"><p class="tk-label">Checklist <span class="muted">${left ? `${left} to go` : 'all done'}</span></p>
+      <ul>${steps.map(s => `<li><label><input type="checkbox" data-step="${esc(s.id)}" ${stepDone(k, s.id) ? 'checked' : ''}><span>${esc(s.t)}${s.due ? ` <em class="${daysLeft(s.due) <= 7 && !stepDone(k, s.id) ? 'hot' : ''}">${fmt(s.due)}</em>` : ''}</span></label></li>`).join('')}</ul></div>`;
+  }
   function trackerHtml(k) {
-    const t = track[k] || {};
+    const t = trackOf(k);
     return `<div class="tracker" data-track="${esc(k)}">
       <label class="tk-label">Status
         <select data-tk="status">${STATUSES.map(s => `<option${(t.status || 'Interested') === s ? ' selected' : ''}>${s}</option>`).join('')}</select></label>
+      ${stepsHtml(k)}
       <label class="tk-label">Notes
         <textarea data-tk="note" rows="2" placeholder="Audition time, what to bring, how it went">${esc(t.note || '')}</textarea></label>
     </div>`;
   }
   function renderMine() {
-    const keys = [...saved].filter(k => ALL.has(k));
-    const byStatus = s => keys.filter(k => (track[k]?.status || 'Interested') === s);
+    // Don't redraw under someone's thumbs while they're typing a note.
+    if (document.activeElement && document.activeElement.closest && document.activeElement.closest('#mine-cards textarea')) { mineDirty = true; return; }
+    mineDirty = false;
+    const keys = savedKeys().filter(k => ALL.has(k));
+    const byStatus = s => keys.filter(k => (trackOf(k).status || 'Interested') === s);
     $('#mine-cards').innerHTML = STATUSES.map(s => {
       const ks = byStatus(s); if (!ks.length) return '';
       return `<h3 class="status-head">${s} <span class="muted">${ks.length}</span></h3>
         <div class="cards">${ks.map(k => `<div class="tracked">${ALL.get(k).card()}${trackerHtml(k)}</div>`).join('')}</div>`;
     }).join('');
     $('#mine-empty').hidden = keys.length > 0;
-    $('#mine-tools').hidden = keys.length === 0;
+    $('#mine-tools').hidden = keys.length === 0 || S.shared; // a shared plan already syncs; no need for a picks link
     $('#mine-n').textContent = keys.length ? `(${keys.length})` : '';
   }
   $('#mine-cards').addEventListener('change', e => {
     const box = e.target.closest('[data-track]'); if (!box) return;
-    const k = box.dataset.track, f = e.target.dataset.tk;
-    track[k] = Object.assign({}, track[k], { [f]: e.target.value });
-    store.set('jn-track', track);
-    if (f === 'status') renderMine();
+    const k = box.dataset.track;
+    if (e.target.dataset.step) { S.set(['steps', k, e.target.dataset.step], e.target.checked || null); renderPersonal(); return; }
+    const f = e.target.dataset.tk; if (!f) return;
+    S.set(['track', k, f], e.target.value || null);
+    if (f === 'status') renderPersonal();
   });
   $('#mine-cards').addEventListener('input', e => {
     if (e.target.dataset.tk !== 'note') return;
-    const k = e.target.closest('[data-track]').dataset.track;
-    track[k] = Object.assign({}, track[k], { note: e.target.value });
-    store.set('jn-track', track);
+    S.set(['track', e.target.closest('[data-track]').dataset.track, 'note'], e.target.value || null);
   });
+  $('#mine-cards').addEventListener('focusout', () => { setTimeout(() => { if (mineDirty) renderMine(); }, 0); });
 
   // Share: a link that carries the starred list, so John can send it to Dixon or his mom.
   $('#mine-share').addEventListener('click', async () => {
-    const url = location.origin + location.pathname + '?list=' + encodeURIComponent([...saved].filter(k => ALL.has(k)).join(',')) + '#mine';
+    const url = location.origin + location.pathname + '?list=' + encodeURIComponent(savedKeys().filter(k => ALL.has(k)).join(',')) + '#mine';
     let ok = false;
     try { if (navigator.share) { await navigator.share({ title: "John's list", url }); ok = true; } } catch (e) {}
     if (!ok) { try { await navigator.clipboard.writeText(url); ok = true; } catch (e) {} }
@@ -429,14 +476,61 @@
   });
   const shared = (() => { try { return (new URLSearchParams(location.search).get('list') || '').split(',').filter(k => ALL.has(k)); } catch (e) { return []; } })();
   if (shared.length) {
-    const fresh = shared.filter(k => !saved.has(k));
+    const fresh = shared.filter(k => !isSaved(k));
     $('#shared').hidden = false;
     $('#shared-text').textContent = `Someone shared ${shared.length} pick${shared.length === 1 ? '' : 's'} with you${fresh.length ? `, ${fresh.length} not on your list yet` : ', all already on your list'}.`;
     $('#shared-cards').innerHTML = shared.map(k => ALL.get(k).card()).join('');
     $('#shared-add').hidden = !fresh.length;
     $('#shared-add').addEventListener('click', () => { fresh.forEach(k => setSaved(k, true)); $('#shared').hidden = true; history.replaceState(null, '', location.pathname + '#mine'); });
   }
-  renderMine();
+  // ---------- This week + plan bar ----------
+  function renderWeek() {
+    const box = $('#week'); if (!box) return;
+    const keys = savedKeys().filter(k => ALL.has(k) && trackOf(k).status !== 'Not for me');
+    if (!keys.length) {
+      box.innerHTML = `<p class="muted" style="margin:0">Star the schools, auditions and calls you care about. Their deadlines and checklists collect here.</p>`;
+      return;
+    }
+    const dated = [];
+    keys.forEach(k => stepsFor(k).forEach(st => { if (st.due && st.due >= today && !stepDone(k, st.id)) dated.push({ k, st }); }));
+    dated.sort((a, b) => a.st.due - b.st.due);
+    const next = dated.slice(0, 4);
+    const openSteps = keys.reduce((n, k) => n + stepsFor(k).filter(st => !stepDone(k, st.id)).length, 0);
+    box.innerHTML = (next.length ? `<ul class="soon">${next.map(({ k, st }) => {
+      const n = daysLeft(st.due);
+      return `<li><div class="d">${fmt(st.due)}<small>${st.due.toLocaleDateString('en-US', { weekday: 'short' })}</small></div>
+        <div class="w"><b>${esc(ALL.get(k).name)}</b><span>${esc(st.t)}</span></div><span class="left${n <= 7 ? ' hot' : ''}">${leftLabel(n)}</span></li>`;
+    }).join('')}</ul>` : '<p class="muted" style="margin:0">Nothing dated coming up on your picks.</p>') +
+      `<p class="small muted" style="margin:12px 0 0">${keys.length} pick${keys.length === 1 ? '' : 's'}, ${openSteps} checklist item${openSteps === 1 ? '' : 's'} left. <a class="link" href="#mine" data-go="mine">Open my list</a></p>`;
+  }
+  function ago(d) { if (!d) return ''; const s = Math.round((Date.now() - d) / 1000); return s < 45 ? 'just now' : s < 3600 ? `${Math.round(s / 60)} min ago` : `${Math.round(s / 3600)} hr ago`; }
+  function renderPlanBar() {
+    const bar = $('#planbar'); if (!bar) return;
+    if (!S.shared) {
+      bar.innerHTML = `<span class="small muted">Saved on this device only.</span>`;
+      return;
+    }
+    const st = S.status === 'offline' ? 'Offline, will sync when you are back' : S.pending ? 'Saving...' : `Shared plan, synced ${ago(S.lastSync)}`;
+    const cal = S.calendarUrl();
+    bar.innerHTML = `<span class="pb-status small"><span class="dot${S.status === 'offline' ? ' off' : ''}"></span>${esc(st)}</span>
+      <span class="pb-actions">
+        ${cal ? `<a class="chip" href="${esc(cal.replace(/^https:/, 'webcal:'))}">Add deadlines to my calendar</a>` : ''}
+        <button class="chip" id="copy-plan">Copy plan link</button>
+      </span>`;
+    $('#copy-plan').addEventListener('click', async e => {
+      const url = S.planUrl(); let ok = false;
+      try { if (navigator.share) { await navigator.share({ title: "John's plan", url }); ok = true; } } catch (err) {}
+      if (!ok) { try { await navigator.clipboard.writeText(url); ok = true; } catch (err) {} }
+      e.target.textContent = ok ? 'Link copied' : url;
+    });
+  }
+  function renderPersonal() {
+    document.querySelectorAll('[data-star]').forEach(x => x.setAttribute('aria-pressed', String(isSaved(x.dataset.star))));
+    renderMine(); renderRoadmap(); renderPrepSchools(); drawSoon(); renderWeek(); renderPlanBar(); syncChecks();
+  }
+  S.onChange(renderPersonal);
+  setInterval(renderPlanBar, 20000);
+  renderPersonal();
 
   // ---------- Tabs ----------
   const tabs = [...document.querySelectorAll('.tab')];

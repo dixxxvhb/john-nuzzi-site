@@ -351,3 +351,21 @@ details.path .body b { font-weight: 500; }
 .tracker textarea { resize: vertical; }
 #shared-cards { margin-top: 8px; }
 #prep-patterns { columns: 1; }
+
+/* ---------- Shared plan ---------- */
+.planbar { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; margin-top: 20px; }
+.planbar:empty { display: none; }
+.pb-status { display: inline-flex; align-items: center; gap: 8px; color: var(--cocoa); font-weight: 500; }
+.pb-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.pb-actions .chip { text-decoration: none; background: var(--white); }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #3f8f5a; flex: none; }
+.dot.off { background: var(--cocoa); }
+.week-box { border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; margin-bottom: 56px; }
+.week-box .soon li:first-child { border-top: 0; }
+.steps { display: grid; gap: 6px; }
+.steps ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.steps label { display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start; padding: 6px 0; cursor: pointer; font-size: 15px; text-transform: none; letter-spacing: 0; color: var(--brown); font-weight: 300; }
+.steps input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--brown); }
+.steps input:checked + span { text-decoration: line-through; color: var(--muted); }
+.steps em { font-style: normal; font-weight: 500; font-size: 13px; color: var(--cocoa); margin-left: 4px; white-space: nowrap; }
+.steps em.hot { background: var(--brown); color: var(--white); padding: 1px 8px; border-radius: 999px; }

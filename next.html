@@ -9,6 +9,11 @@
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon-180.png">
 <link rel="stylesheet" href="css/site.css">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="John's Plan">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 </head>
 <body>
 
@@ -28,7 +33,8 @@
     <div class="wrap">
       <p class="eyebrow">What's Next</p>
       <h1>Class of 2027. Here's the map.</h1>
-      <p class="lede">Every college, audition, scholarship, company and job board here was checked against its own official page in October 2026. Tap the star on anything you like and it lands in My List on this device.</p>
+      <p class="lede">Every college, audition, scholarship, company and job board here was checked against its own official page in October 2026. Star what you like and it lands in My List with its own checklist.</p>
+      <div class="planbar" id="planbar"></div>
     </div>
   </section>
 
@@ -51,6 +57,11 @@
 
   <!-- START HERE -->
   <section class="wrap section" data-panel="start" hidden>
+    <div class="week-box">
+      <p class="eyebrow">This week</p>
+      <h2 style="margin-bottom:16px">What's next on your picks.</h2>
+      <div id="week"></div>
+    </div>
     <div class="two">
       <div>
         <p class="eyebrow">Coming up</p>
@@ -212,6 +223,7 @@
   </div>
 </footer>
 
+<script src="js/plan-store.js"></script>
 <script src="js/next.js"></script>
 </body>
 </html>
