@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>John Nuzzi Media</title>
 <meta name="description" content="Every photo and video of John Nuzzi in one place.">
 <meta name="theme-color" content="#C7E0EE">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon-180.png">
 <link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/app.css">
 </head>
-<body>
+<body class="media-page">
 
 <header class="site-header">
   <div class="wrap">
@@ -18,17 +19,19 @@
     <nav class="nav" aria-label="Main">
       <a href="./">Home</a>
       <a href="media.html" aria-current="page">Media</a>
-      <a href="next.html">What's Next</a>
+      <a href="next.html">Plan</a>
     </nav>
   </div>
 </header>
 
 <main>
   <section class="page-head">
-    <div class="wrap">
-      <p class="eyebrow">Media</p>
-      <h1>Every photo. Every video.</h1>
-      <p class="lede" id="summary">Solos, groups, class and rehearsal, all in one place.</p>
+    <div class="wrap media-head">
+      <div>
+        <h1>Every photo. Every video.</h1>
+        <p class="lede" id="summary">Solos, groups, class and rehearsal, all in one place.</p>
+      </div>
+      <button class="btn add-btn" id="add-open" hidden>Add photos or videos</button>
     </div>
   </section>
 
@@ -50,78 +53,15 @@
   </div>
 </footer>
 
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-grab" aria-hidden="true"></div>
+  <div class="sheet-body" id="sheet-body"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
 <script src="js/viewer.js"></script>
-<script>
-(async function () {
-  const FILTERS = [
-    { id: 'all', label: 'Everything', test: () => true },
-    { id: 'videos', label: 'Videos', test: i => i.type === 'video' },
-    { id: 'solos', label: 'Solos', test: i => i.tag === 'solos' },
-    { id: 'groups', label: 'Groups', test: i => i.tag === 'groups' },
-    { id: 'class', label: 'Class and rehearsal', test: i => i.tag === 'class' },
-    { id: 'photos', label: 'Photos', test: i => i.type === 'photo' },
-    { id: 'stage', label: 'On stage', test: i => i.type === 'photo' && i.tag === 'stage' },
-    { id: 'off', label: 'Off stage', test: i => i.type === 'photo' && i.tag !== 'stage' }
-  ];
-  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-  const res = await fetch('data/media.json');
-  const { items } = await res.json();
-  // Newest season first, videos ahead of photos inside a season, newest dates first.
-  const order = s => s ? parseInt(s, 10) : 0;
-  items.sort((a, b) => order(b.season) - order(a.season) || (a.type === b.type ? String(b.date || '').localeCompare(String(a.date || '')) : a.type === 'video' ? -1 : 1));
-
-  const vids = items.filter(i => i.type === 'video').length;
-  document.getElementById('summary').textContent =
-    `${items.length - vids} photos and ${vids} videos, from his first solo to this season.`;
-
-  let current = 'all';
-  try { current = new URLSearchParams(location.search).get('f') || 'all'; } catch (e) {}
-  const chips = document.getElementById('chips');
-  FILTERS.forEach(f => {
-    const n = items.filter(f.test).length;
-    if (!n) return;
-    const b = document.createElement('button');
-    b.className = 'chip'; b.dataset.id = f.id;
-    b.innerHTML = `${f.label} <span class="n">${n}</span>`;
-    b.addEventListener('click', () => { current = f.id; draw(); history.replaceState(null, '', f.id === 'all' ? 'media.html' : '?f=' + f.id); });
-    chips.appendChild(b);
-  });
-
-  const grid = document.getElementById('grid');
-  function draw() {
-    const f = FILTERS.find(x => x.id === current) || FILTERS[0];
-    chips.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.id === f.id)));
-    const list = items.filter(f.test);
-    grid.innerHTML = '';
-    document.getElementById('empty').hidden = list.length > 0;
-    let season = null, cols = null;
-    list.forEach((it, idx) => {
-      const sKey = it.season || 'Earlier';
-      if (sKey !== season) {
-        season = sKey;
-        const h = document.createElement('h2');
-        h.className = 'season-head';
-        h.textContent = sKey === 'Earlier' ? 'More from the archive' : sKey.replace('-', ' to 20') + ' season';
-        grid.appendChild(h);
-        cols = document.createElement('div');
-        cols.className = 'grid';
-        grid.appendChild(cols);
-      }
-      const b = document.createElement('button');
-      b.className = 'tile' + (it.type === 'video' ? ' is-video' : '');
-      const src = it.type === 'photo' ? it.src : it.poster;
-      const dims = it.w ? ` width="${it.w}" height="${it.h}"` : '';
-      const meta = [it.kind, it.season].filter(Boolean).join(' · ');
-      b.innerHTML = `<img src="${esc(src)}"${dims} alt="${esc(it.title)}" loading="lazy">
-        ${it.type === 'video' ? '<span class="play" aria-hidden="true"></span>' : ''}
-        <span class="cap"><b>${esc(it.title)}</b>${esc(meta)}</span>`;
-      b.setAttribute('aria-label', (it.type === 'video' ? 'Play ' : 'Open ') + it.title);
-      b.addEventListener('click', () => Viewer.open(list, idx));
-      cols.appendChild(b);
-    });
-  }
-  draw();
-})();
-</script>
+<script src="js/uploads.js"></script>
+<script src="js/media.js"></script>
 </body>
 </html>

@@ -2,228 +2,56 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>John's Next Steps</title>
-<meta name="description" content="Colleges, auditions, scholarships, companies and dance jobs for the Class of 2027.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>John's Plan</title>
+<meta name="description" content="Colleges, auditions, open calls, scholarships and jobs for the Class of 2027, with a shared plan.">
 <meta name="theme-color" content="#C7E0EE">
 <link rel="icon" href="brand/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="brand/apple-touch-icon-180.png">
-<link rel="stylesheet" href="css/site.css">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="John's Plan">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/app.css">
 </head>
-<body>
+<body class="app">
 
-<header class="site-header">
+<header class="site-header app-header">
   <div class="wrap">
     <a class="wordmark" href="./">John Nuzzi</a>
-    <nav class="nav" aria-label="Main">
+    <nav class="nav" aria-label="Site">
       <a href="./">Home</a>
       <a href="media.html">Media</a>
-      <a href="next.html" aria-current="page">What's Next</a>
+      <a href="next.html" aria-current="page">Plan</a>
     </nav>
   </div>
 </header>
 
-<main>
-  <section class="page-head">
-    <div class="wrap">
-      <p class="eyebrow">What's Next</p>
-      <h1>Class of 2027. Here's the map.</h1>
-      <p class="lede">Every college, audition, scholarship, company and job board here was checked against its own official page in October 2026. Star what you like and it lands in My List with its own checklist.</p>
-      <div class="planbar" id="planbar"></div>
-    </div>
-  </section>
+<div class="shell">
+  <nav class="appnav" aria-label="Plan sections" id="tabbar"></nav>
 
-  <div class="tabbar">
-    <div class="wrap">
-      <div class="tabs" role="tablist" id="tabs">
-        <button class="tab" role="tab" data-tab="start">Start here</button>
-        <button class="tab" role="tab" data-tab="roadmap">Roadmap</button>
-        <button class="tab" role="tab" data-tab="colleges">Colleges</button>
-        <button class="tab" role="tab" data-tab="auditions">Auditions</button>
-        <button class="tab" role="tab" data-tab="calls">Open calls</button>
-        <button class="tab" role="tab" data-tab="money">Money</button>
-        <button class="tab" role="tab" data-tab="prep">Get ready</button>
-        <button class="tab" role="tab" data-tab="careers">Careers</button>
-        <button class="tab" role="tab" data-tab="jobs">Who's hiring</button>
-        <button class="tab" role="tab" data-tab="mine">My list <span id="mine-n" class="muted"></span></button>
-      </div>
+  <main class="views" id="views">
+    <section class="view" data-view="today" hidden></section>
+    <section class="view" data-view="explore" hidden></section>
+    <section class="view" data-view="plan" hidden></section>
+    <section class="view" data-view="roadmap" hidden></section>
+    <section class="view" data-view="prep" hidden></section>
+    <div class="loading" id="loading" aria-live="polite">
+      <div class="sk sk-title"></div><div class="sk sk-card"></div><div class="sk sk-row"></div><div class="sk sk-row"></div><div class="sk sk-row"></div>
     </div>
-  </div>
+  </main>
+</div>
 
-  <!-- START HERE -->
-  <section class="wrap section" data-panel="start" hidden>
-    <div class="week-box">
-      <p class="eyebrow">This week</p>
-      <h2 style="margin-bottom:16px">What's next on your picks.</h2>
-      <div id="week"></div>
-    </div>
-    <div class="two">
-      <div>
-        <p class="eyebrow">Coming up</p>
-        <h2 style="margin-bottom:20px">The next deadlines.</h2>
-        <ul class="soon" id="soon"></ul>
-        <p style="margin-top:16px"><button class="btn ghost" id="soon-more">Show every date</button></p>
-      </div>
-      <div>
-        <p class="eyebrow">Senior year kit</p>
-        <h2 style="margin-bottom:20px">Get these ready once. Use them everywhere.</h2>
-        <ul class="checklist" id="kit"></ul>
-        <p class="note" style="margin-top:20px"><b>Turning 17 matters.</b> A few programs and most theme park and cruise jobs want you to be 18. Anything with an age rule says so on its card, so you can see what is open now and what opens next fall.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ROADMAP -->
-  <section class="wrap section" data-panel="roadmap" hidden>
-    <div class="section-head">
-      <div>
-        <p class="eyebrow">Senior year, month by month</p>
-        <h2>From now to move-in day.</h2>
-      </div>
-      <button class="chip" id="road-mine" aria-pressed="false">Only my list</button>
-    </div>
-    <div id="road" class="road"></div>
-  </section>
-
-  <!-- COLLEGES -->
-  <section class="wrap section" data-panel="colleges" hidden>
-    <div class="filters">
-      <div class="chips" id="college-groups"></div>
-    </div>
-    <div class="filters">
-      <input class="search" id="college-q" type="search" placeholder="Search schools, cities, styles" aria-label="Search colleges">
-      <button class="chip" id="college-prescreen" aria-pressed="false">Needs a prescreen video</button>
-      <select class="sort" id="college-sort" aria-label="Sort colleges"></select>
-    </div>
-    <p class="count" id="college-count"></p>
-    <div class="cards" id="college-cards"></div>
-  </section>
-
-  <!-- AUDITIONS -->
-  <section class="wrap section" data-panel="auditions" hidden>
-    <div class="filters"><div class="chips" id="aud-types"></div></div>
-    <div class="filters">
-      <input class="search" id="aud-q" type="search" placeholder="Search auditions, scholarships, cities" aria-label="Search auditions">
-      <button class="chip" id="aud-past" aria-pressed="false">Show ones that already passed</button>
-    </div>
-    <p class="count" id="aud-count"></p>
-    <div class="cards" id="aud-cards"></div>
-  </section>
-
-  <!-- OPEN CALLS -->
-  <section class="wrap section" data-panel="calls" hidden>
-    <p class="eyebrow">Open calls</p>
-    <h2 style="margin-bottom:12px">Real auditions, posted right now.</h2>
-    <p class="lede" style="margin-bottom:8px">Cruise lines, theme parks, Broadway, touring shows and dance companies. Each card says whether you can walk in at 17 or have to wait until you turn 18.</p>
-    <div class="filters"><div class="chips" id="call-types"></div></div>
-    <div class="filters">
-      <input class="search" id="call-q" type="search" placeholder="Search shows, cruise lines, cities" aria-label="Search open calls">
-      <button class="chip" id="call-now" aria-pressed="false">Only ones I can go to now</button>
-    </div>
-    <p class="count" id="call-count"></p>
-    <div class="cards" id="call-cards"></div>
-  </section>
-
-  <!-- MONEY -->
-  <section class="wrap section" data-panel="money" hidden>
-    <p class="eyebrow">Money</p>
-    <h2 style="margin-bottom:12px">What it really costs, and who helps pay.</h2>
-    <p class="lede" style="margin-bottom:24px">Sticker price and real price are different numbers. Tuition below is what you'd be charged as a Florida resident for 2026-27 (expect a few percent more by fall 2027). The average cost after aid comes from the U.S. Department of Education's College Scorecard: what families actually paid. It's hidden for public schools outside Florida, because that average is mostly in-state students.</p>
-    <p class="note" id="bf" hidden></p>
-    <div id="cost-wrap" hidden style="margin-top:32px">
-      <h3 style="margin-bottom:12px">Every college, cheapest tuition first</h3>
-      <div class="ct" id="cost-table"></div>
-    </div>
-    <div style="margin-top:48px">
-      <h3>Scholarships</h3>
-      <div class="filters"><div class="chips" id="money-types"></div></div>
-      <div class="filters"><input class="search" id="money-q" type="search" placeholder="Search scholarships" aria-label="Search scholarships"></div>
-      <p class="count" id="money-count"></p>
-      <div class="cards" id="money-cards"></div>
-    </div>
-  </section>
-
-  <!-- GET READY -->
-  <section class="wrap section" data-panel="prep" hidden>
-    <p class="eyebrow">Get ready</p>
-    <h2 style="margin-bottom:12px">What every school actually asks for.</h2>
-    <p class="muted" id="prep-wait">The audition requirements for every school are being pulled from their official pages.</p>
-    <div id="prep-ready" hidden>
-      <div class="two" style="margin-top:24px">
-        <div>
-          <h3 style="margin-bottom:8px">Film day checklist</h3>
-          <p class="muted small" style="margin:0 0 8px">Every line comes from a rule at least one of your schools wrote down.</p>
-          <ul class="checklist" id="prep-film"></ul>
-        </div>
-        <div>
-          <h3 style="margin-bottom:8px">What the schools have in common</h3>
-          <ul class="awards" id="prep-patterns"></ul>
-        </div>
-      </div>
-      <div class="section-head" style="margin-top:48px">
-        <h3>School by school</h3>
-        <button class="chip" id="prep-all" aria-pressed="false">Show every school</button>
-      </div>
-      <p class="muted" id="prep-empty">Star a college and its exact requirements show up here. Or tap Show every school.</p>
-      <div class="cards" id="prep-cards"></div>
-    </div>
-  </section>
-
-  <!-- CAREERS -->
-  <section class="wrap section" data-panel="careers" hidden>
-    <p class="eyebrow">Ways to make a life in dance</p>
-    <h2 style="margin-bottom:12px">More doors than you think.</h2>
-    <p class="lede" style="margin-bottom:28px">Performing is one path. Choreographing, teaching, coaching, the body side (physical therapy, dance medicine) and the business side are all real careers dancers move into, often more than one at once.</p>
-    <div class="paths" id="paths"></div>
-  </section>
-
-  <!-- JOBS -->
-  <section class="wrap section" data-panel="jobs" hidden>
-    <div class="filters"><div class="chips" id="emp-types"></div></div>
-    <div class="filters">
-      <input class="search" id="emp-q" type="search" placeholder="Search companies, cruise lines, parks" aria-label="Search employers">
-      <button class="chip" id="emp-17" aria-pressed="false">Open to 17-year-olds</button>
-    </div>
-    <p class="count" id="emp-count"></p>
-    <div class="cards" id="emp-cards"></div>
-    <div style="margin-top:56px">
-      <p class="eyebrow">Where the listings live</p>
-      <h2 style="margin-bottom:20px">Job boards and resources.</h2>
-      <ul class="awards" id="boards"></ul>
-    </div>
-  </section>
-
-  <!-- MINE -->
-  <section class="wrap section" data-panel="mine" hidden>
-    <p class="eyebrow">My list</p>
-    <h2 style="margin-bottom:12px">Your shortlist.</h2>
-    <div class="note" id="shared" hidden style="margin:16px 0 24px">
-      <p id="shared-text" style="margin:0 0 12px"></p>
-      <button class="btn" id="shared-add">Add them to my list</button>
-      <div class="cards" id="shared-cards"></div>
-    </div>
-    <p class="muted" id="mine-empty">Nothing saved yet. Tap the star on any school, audition, open call or company and it shows up here. It's saved on this phone or computer.</p>
-    <div id="mine-tools" class="filters" hidden>
-      <button class="btn ghost" id="mine-share">Share my list</button>
-      <span class="muted small" id="mine-share-msg">Send it to Dixon or your mom. The link carries your picks.</span>
-    </div>
-    <div id="mine-cards"></div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <span class="wordmark">John Nuzzi</span>
-    <p>Dates change. Always confirm on the official page before you pay or submit anything.</p>
-  </div>
-</footer>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-grab" aria-hidden="true"></div>
+  <div class="sheet-body" id="sheet-body"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
 <script src="js/plan-store.js"></script>
-<script src="js/next.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
