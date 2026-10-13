@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John's Next Steps</title>
+<meta name="description" content="Colleges, auditions, scholarships, companies and dance jobs for the Class of 2027.">
+<meta name="theme-color" content="#C7E0EE">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon-180.png">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./">John Nuzzi</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./">Home</a>
+      <a href="media.html">Media</a>
+      <a href="next.html" aria-current="page">What's Next</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">What's Next</p>
+      <h1>Class of 2027. Here's the map.</h1>
+      <p class="lede">Every college, audition, scholarship, company and job board here was checked against its own official page in October 2026. Tap the star on anything you like and it lands in My List on this device.</p>
+    </div>
+  </section>
+
+  <div class="tabbar">
+    <div class="wrap">
+      <div class="tabs" role="tablist" id="tabs">
+        <button class="tab" role="tab" data-tab="start">Start here</button>
+        <button class="tab" role="tab" data-tab="colleges">Colleges</button>
+        <button class="tab" role="tab" data-tab="auditions">Auditions and scholarships</button>
+        <button class="tab" role="tab" data-tab="careers">Careers</button>
+        <button class="tab" role="tab" data-tab="jobs">Who's hiring</button>
+        <button class="tab" role="tab" data-tab="mine">My list <span id="mine-n" class="muted"></span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- START HERE -->
+  <section class="wrap section" data-panel="start" hidden>
+    <div class="two">
+      <div>
+        <p class="eyebrow">Coming up</p>
+        <h2 style="margin-bottom:20px">The next deadlines.</h2>
+        <ul class="soon" id="soon"></ul>
+        <p style="margin-top:16px"><button class="btn ghost" id="soon-more">Show every date</button></p>
+      </div>
+      <div>
+        <p class="eyebrow">Senior year kit</p>
+        <h2 style="margin-bottom:20px">Get these ready once. Use them everywhere.</h2>
+        <ul class="checklist" id="kit"></ul>
+        <p class="note" style="margin-top:20px"><b>Turning 17 matters.</b> A few programs and most theme park and cruise jobs want you to be 18. Anything with an age rule says so on its card, so you can see what is open now and what opens next fall.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLEGES -->
+  <section class="wrap section" data-panel="colleges" hidden>
+    <div class="filters">
+      <div class="chips" id="college-groups"></div>
+    </div>
+    <div class="filters">
+      <input class="search" id="college-q" type="search" placeholder="Search schools, cities, styles" aria-label="Search colleges">
+      <button class="chip" id="college-prescreen" aria-pressed="false">Needs a prescreen video</button>
+    </div>
+    <p class="count" id="college-count"></p>
+    <div class="cards" id="college-cards"></div>
+  </section>
+
+  <!-- AUDITIONS -->
+  <section class="wrap section" data-panel="auditions" hidden>
+    <div class="filters"><div class="chips" id="aud-types"></div></div>
+    <div class="filters">
+      <input class="search" id="aud-q" type="search" placeholder="Search auditions, scholarships, cities" aria-label="Search auditions">
+      <button class="chip" id="aud-past" aria-pressed="false">Show ones that already passed</button>
+    </div>
+    <p class="count" id="aud-count"></p>
+    <div class="cards" id="aud-cards"></div>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="wrap section" data-panel="careers" hidden>
+    <p class="eyebrow">Ways to make a life in dance</p>
+    <h2 style="margin-bottom:12px">More doors than you think.</h2>
+    <p class="lede" style="margin-bottom:28px">Performing is one path. Choreographing, teaching, coaching, the body side (physical therapy, dance medicine) and the business side are all real careers dancers move into, often more than one at once.</p>
+    <div class="paths" id="paths"></div>
+  </section>
+
+  <!-- JOBS -->
+  <section class="wrap section" data-panel="jobs" hidden>
+    <div class="filters"><div class="chips" id="emp-types"></div></div>
+    <div class="filters">
+      <input class="search" id="emp-q" type="search" placeholder="Search companies, cruise lines, parks" aria-label="Search employers">
+      <button class="chip" id="emp-17" aria-pressed="false">Open to 17-year-olds</button>
+    </div>
+    <p class="count" id="emp-count"></p>
+    <div class="cards" id="emp-cards"></div>
+    <div style="margin-top:56px">
+      <p class="eyebrow">Where the listings live</p>
+      <h2 style="margin-bottom:20px">Job boards and resources.</h2>
+      <ul class="awards" id="boards"></ul>
+    </div>
+  </section>
+
+  <!-- MINE -->
+  <section class="wrap section" data-panel="mine" hidden>
+    <p class="eyebrow">My list</p>
+    <h2 style="margin-bottom:12px">Your shortlist.</h2>
+    <p class="muted" id="mine-empty">Nothing saved yet. Tap the star on any school, audition or company and it shows up here. It's saved on this phone or computer.</p>
+    <div class="cards" id="mine-cards"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="wordmark">John Nuzzi</span>
+    <p>Dates change. Always confirm on the official page before you pay or submit anything.</p>
+  </div>
+</footer>
+
+<script src="js/next.js"></script>
+</body>
+</html>

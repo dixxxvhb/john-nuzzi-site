@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>John Nuzzi Media</title>
+<meta name="description" content="Every photo and video of John Nuzzi in one place.">
+<meta name="theme-color" content="#C7E0EE">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon-180.png">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="wordmark" href="./">John Nuzzi</a>
+    <nav class="nav" aria-label="Main">
+      <a href="./">Home</a>
+      <a href="media.html" aria-current="page">Media</a>
+      <a href="next.html">What's Next</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">Media</p>
+      <h1>Every photo. Every video.</h1>
+      <p class="lede" id="summary">Solos, groups, class and rehearsal, all in one place.</p>
+    </div>
+  </section>
+
+  <div class="toolbar">
+    <div class="wrap"><div class="chips" id="chips" role="group" aria-label="Filter"></div></div>
+  </div>
+
+  <section class="wrap">
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>Nothing here yet.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="wordmark">John Nuzzi</span>
+    <p><a href="https://www.instagram.com/johnnuzzi_dance/">Instagram @johnnuzzi_dance</a></p>
+    <p>Trained with DWD ProSeries, Orlando</p>
+  </div>
+</footer>
+
+<script src="js/viewer.js"></script>
+<script>
+(async function () {
+  const FILTERS = [
+    { id: 'all', label: 'Everything', test: () => true },
+    { id: 'videos', label: 'Videos', test: i => i.type === 'video' },
+    { id: 'solos', label: 'Solos', test: i => i.tag === 'solos' },
+    { id: 'groups', label: 'Groups', test: i => i.tag === 'groups' },
+    { id: 'class', label: 'Class and rehearsal', test: i => i.tag === 'class' },
+    { id: 'photos', label: 'Photos', test: i => i.type === 'photo' },
+    { id: 'dwd', label: 'ProSeries', test: i => i.tag === 'dwd' || i.tag === 'awards' }
+  ];
+  const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const res = await fetch('data/media.json');
+  const { items } = await res.json();
+  // Newest season first, videos ahead of photos inside a season.
+  const order = s => s ? parseInt(s, 10) : 0;
+  items.sort((a, b) => order(b.season) - order(a.season) || (a.type === b.type ? 0 : a.type === 'video' ? -1 : 1));
+
+  const vids = items.filter(i => i.type === 'video').length;
+  document.getElementById('summary').textContent =
+    `${items.length - vids} photos and ${vids} videos, from his first solo to this season.`;
+
+  let current = 'all';
+  try { current = new URLSearchParams(location.search).get('f') || 'all'; } catch (e) {}
+  const chips = document.getElementById('chips');
+  FILTERS.forEach(f => {
+    const n = items.filter(f.test).length;
+    if (!n) return;
+    const b = document.createElement('button');
+    b.className = 'chip'; b.dataset.id = f.id;
+    b.innerHTML = `${f.label} <span class="n">${n}</span>`;
+    b.addEventListener('click', () => { current = f.id; draw(); history.replaceState(null, '', f.id === 'all' ? 'media.html' : '?f=' + f.id); });
+    chips.appendChild(b);
+  });
+
+  const grid = document.getElementById('grid');
+  function draw() {
+    const f = FILTERS.find(x => x.id === current) || FILTERS[0];
+    chips.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.id === f.id)));
+    const list = items.filter(f.test);
+    grid.innerHTML = '';
+    document.getElementById('empty').hidden = list.length > 0;
+    list.forEach((it, idx) => {
+      const b = document.createElement('button');
+      b.className = 'tile' + (it.type === 'video' ? ' is-video' : '');
+      const src = it.type === 'photo' ? it.src : it.poster;
+      const dims = it.w ? ` width="${it.w}" height="${it.h}"` : '';
+      const meta = [it.kind, it.season].filter(Boolean).join(' · ');
+      b.innerHTML = `<img src="${esc(src)}"${dims} alt="${esc(it.title)}" loading="lazy">
+        ${it.type === 'video' ? '<span class="play" aria-hidden="true"></span>' : ''}
+        <span class="cap"><b>${esc(it.title)}</b>${esc(meta)}</span>`;
+      b.setAttribute('aria-label', (it.type === 'video' ? 'Play ' : 'Open ') + it.title);
+      b.addEventListener('click', () => Viewer.open(list, idx));
+      grid.appendChild(b);
+    });
+  }
+  draw();
+})();
+</script>
+</body>
+</html>

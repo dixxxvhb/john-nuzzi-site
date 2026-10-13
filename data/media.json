@@ -1,0 +1,728 @@
+{
+ "updated": "2026-10-13",
+ "items": [
+  {
+   "type": "photo",
+   "src": "images/photos/agony-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Agony",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/agony-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Agony",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/agony-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Agony",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/ammore-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Ammore",
+   "kind": "Competition",
+   "season": null,
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/ammore-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Ammore",
+   "kind": "Competition",
+   "season": null,
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/aura-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Aura",
+   "kind": "Jazz solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/aura-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Aura",
+   "kind": "Jazz solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/aura-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Aura",
+   "kind": "Jazz solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/aura-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Aura",
+   "kind": "Jazz solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/aura-5.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Aura",
+   "kind": "Jazz solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/bio-portrait.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Portrait",
+   "kind": "Portrait",
+   "season": null,
+   "tag": "portrait"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-5.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-6.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-7.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/evidemment-8.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Evidemment",
+   "kind": "Jazz small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/heart-of-gold-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Heart of Gold",
+   "kind": "Lyrical solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/heart-of-gold-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Heart of Gold",
+   "kind": "Lyrical solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/heart-of-gold-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Heart of Gold",
+   "kind": "Lyrical solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/heart-of-gold-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Heart of Gold",
+   "kind": "Lyrical solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/heart-of-gold-5.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Heart of Gold",
+   "kind": "Lyrical solo",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-5.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-6.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-7.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/kingdom-8.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Kingdom",
+   "kind": "Group",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-10.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-5.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-6.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-7.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-8.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/prelude-9.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/skies-of-la-1.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Skies of LA",
+   "kind": "Lyrical small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/skies-of-la-2.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Skies of LA",
+   "kind": "Lyrical small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/skies-of-la-3.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Skies of LA",
+   "kind": "Lyrical small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "images/photos/skies-of-la-4.jpg",
+   "w": 1200,
+   "h": 800,
+   "title": "Skies of LA",
+   "kind": "Lyrical small group",
+   "season": "2024-25",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/open-house-lift.jpg",
+   "w": 1086,
+   "h": 1448,
+   "title": "Open House lift",
+   "kind": "ProSeries Open House",
+   "season": "2025-26",
+   "tag": "dwd"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/prelude-campaign-84.jpg",
+   "w": 1600,
+   "h": 1067,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo, Groove",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/prelude-campaign-9.jpg",
+   "w": 1600,
+   "h": 1067,
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo, Groove",
+   "season": "2025-26",
+   "tag": "stage"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-all-around.jpg",
+   "w": 1200,
+   "h": 927,
+   "title": "The All-Around Award",
+   "kind": "DWD Summer Intensive",
+   "season": "2026-27",
+   "tag": "awards"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-backbend-layout.jpg",
+   "w": 1200,
+   "h": 675,
+   "title": "Summer Intensive",
+   "kind": "Showcase",
+   "season": "2026-27",
+   "tag": "dwd"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-floor-pike.jpg",
+   "w": 1280,
+   "h": 720,
+   "title": "Summer Intensive",
+   "kind": "Showcase",
+   "season": "2026-27",
+   "tag": "dwd"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-floor-tilt.jpg",
+   "w": 1200,
+   "h": 675,
+   "title": "Summer Intensive",
+   "kind": "Showcase",
+   "season": "2026-27",
+   "tag": "dwd"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-layout.jpg",
+   "w": 1200,
+   "h": 675,
+   "title": "Summer Intensive",
+   "kind": "Showcase",
+   "season": "2026-27",
+   "tag": "dwd"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-trio-award.jpg",
+   "w": 1200,
+   "h": 900,
+   "title": "First trio award",
+   "kind": "with Daisy and Evie",
+   "season": "2026-27",
+   "tag": "awards"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/si-2026-trio-award-dixon.jpg",
+   "w": 1200,
+   "h": 900,
+   "title": "First trio award",
+   "kind": "Summer Intensive",
+   "season": "2026-27",
+   "tag": "awards"
+  },
+  {
+   "type": "photo",
+   "src": "media/photos/signing-day-dixon-john.jpg",
+   "w": 960,
+   "h": 1280,
+   "title": "Signing Day",
+   "kind": "ProSeries Season 1",
+   "season": "2026-27",
+   "tag": "dwd"
+  },
+  {
+   "type": "video",
+   "title": "Torn",
+   "kind": "His very first solo",
+   "season": "2021-22",
+   "tag": "solos",
+   "src": "media/video/torn-first-solo.mp4",
+   "poster": "media/posters/torn-first-solo.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Prelude in C# Minor",
+   "kind": "Contemporary solo. TITANIUM, Grand Champion 12+ Solos",
+   "season": "2025-26",
+   "tag": "solos",
+   "src": "media/video/prelude-in-c-minor.mp4",
+   "poster": "media/posters/prelude-in-c-minor.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Heart of Gold",
+   "kind": "Advanced teen lyrical solo",
+   "season": "2024-25",
+   "tag": "solos",
+   "youtube": "M0GmWaSe2mU",
+   "poster": "https://i.ytimg.com/vi/M0GmWaSe2mU/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Aura",
+   "kind": "Advanced teen jazz solo, StarQuest",
+   "season": "2024-25",
+   "tag": "solos",
+   "youtube": "-oxztercC90",
+   "poster": "https://i.ytimg.com/vi/-oxztercC90/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "I Believe",
+   "kind": "Teen musical theatre solo, StarQuest Regionals",
+   "season": "2024-25",
+   "tag": "solos",
+   "youtube": "fGD2xngu4wA",
+   "poster": "https://i.ytimg.com/vi/fGD2xngu4wA/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "At This Moment",
+   "kind": "Solo",
+   "season": null,
+   "tag": "solos",
+   "youtube": "TOoWyM2bJcA",
+   "poster": "https://i.ytimg.com/vi/TOoWyM2bJcA/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "I Am",
+   "kind": "Advanced lyrical trio, Showstopper",
+   "season": "2023-24",
+   "tag": "groups",
+   "youtube": "zySZ7-SC9aw",
+   "poster": "https://i.ytimg.com/vi/zySZ7-SC9aw/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Taking Chances",
+   "kind": "Teen small group lyrical, Showstopper",
+   "season": "2023-24",
+   "tag": "groups",
+   "youtube": "WRPdBJ29l6U",
+   "poster": "https://i.ytimg.com/vi/WRPdBJ29l6U/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Skies of LA",
+   "kind": "Advanced lyrical small group, StarQuest",
+   "season": "2024-25",
+   "tag": "groups",
+   "youtube": "5v0E_QoECww",
+   "poster": "https://i.ytimg.com/vi/5v0E_QoECww/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Evidemment",
+   "kind": "Jazz small group, StarQuest",
+   "season": "2024-25",
+   "tag": "groups",
+   "youtube": "6N5F_EBHjmQ",
+   "poster": "https://i.ytimg.com/vi/6N5F_EBHjmQ/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Monotony",
+   "kind": "Rehearsing it as a solo, Summer Intensive",
+   "season": "2026-27",
+   "tag": "class",
+   "src": "media/video/monotony-solo-rehearsal.mp4",
+   "poster": "media/posters/monotony-solo-rehearsal.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Monotony",
+   "kind": "Summer Intensive showcase",
+   "season": "2026-27",
+   "tag": "groups",
+   "src": "media/video/monotony-showcase.mp4",
+   "poster": "media/posters/monotony-showcase.jpg"
+  },
+  {
+   "type": "video",
+   "title": "ProSeries Open House reel",
+   "kind": "DWD ProSeries",
+   "season": "2025-26",
+   "tag": "class",
+   "youtube": "IOLMtpKK23A",
+   "poster": "https://i.ytimg.com/vi/IOLMtpKK23A/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Open House combo",
+   "kind": "DWD ProSeries",
+   "season": "2025-26",
+   "tag": "class",
+   "youtube": "_zvikSJ0OZ0",
+   "poster": "https://i.ytimg.com/vi/_zvikSJ0OZ0/hqdefault.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Open House combo",
+   "kind": "with Yessa",
+   "season": "2025-26",
+   "tag": "class",
+   "src": "media/video/open-house-combo-john-yessa.mp4",
+   "poster": "media/posters/open-house-combo-john-yessa.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Marking the combo",
+   "kind": "Open House",
+   "season": "2025-26",
+   "tag": "class",
+   "src": "media/video/open-house-marking.mp4",
+   "poster": "media/posters/open-house-marking.jpg"
+  },
+  {
+   "type": "video",
+   "title": "Open House combo",
+   "kind": "with Adelyn and Athena",
+   "season": "2025-26",
+   "tag": "class",
+   "src": "media/video/open-house-combo-stairs.mp4",
+   "poster": "media/posters/open-house-combo-stairs.jpg"
+  }
+ ]
+}
